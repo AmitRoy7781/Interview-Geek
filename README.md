@@ -22,6 +22,5 @@ An online platform to test your interview skills
 - **Language of Back-End Development :** Python 3.6
 - **Web Framework :** Flask 1.0.2
 - **Front-End :** HTML, CSS, Javascript
-- **Machine Learning Library :** Scikit-learn
 - **Database :** MongoDB (mLab.com)
 - **Information Retrieval Tool :** Beautiful Soup 4.4.0
