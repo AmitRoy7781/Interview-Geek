@@ -1,323 +1,833 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-        <title>MyCompany - ZyPop Web Templates</title>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <title>Edustage Education</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/themify-icons.css" />
+    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css" />
+    <!-- main css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-        <!-- Main CSS --> 
-        <link rel="stylesheet" href="css/style.css">
-
-        <!-- Font Awesome -->
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    </head>
-  
-    <body>
-
-        <!-- Header -->
-        <div class="header-wrap d-none d-md-block">
-            <div class="container">
-                <div class="row">
-                    
-                    <!-- Left header box -->
-                    <header class="col-6 text-left">
-                        <h1><span>Website</span>Name</h1>
-                    </header>
-                    
-                    <!-- Right header box -->
-                    <div class="col-6 text-right">               
-                        <p class="header-social-icons social-icons">
-                            <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-                            <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
-                            <a href="#"><i class="fa fa-youtube fa-2x"></i></a>
-                            <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+  <body>
+    <!--================ Start Header Menu Area =================-->
+    <header class="header_area">
+      <div class="main_menu">
+        <div class="search_input" id="search_input_box">
+          <div class="container">
+            <form class="d-flex justify-content-between" method="" action="">
+              <input
+                type="text"
+                class="form-control"
+                id="search_input"
+                placeholder="Search Here"
+              />
+              <button type="submit" class="btn"></button>
+              <span
+                class="ti-close"
+                id="close_search"
+                title="Close Search"
+              ></span>
+            </form>
+          </div>
         </div>
 
-        
-        <!-- Main navigation -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-            <div class="container">
-                
-                <!-- Company name shown on mobile -->
-                <a class="navbar-brand d-md-none d-lg-none d-xl-none" href="#"><span>Website</span>Name</a>
-
-                <!-- Mobile menu toggle -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Main navigation items -->
-                <div class="collapse navbar-collapse" id="mainNavbar">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Examples &amp; Pages</a>
-                                    <div class="dropdown-menu navbar-dark bg-primary">
-                                          <a class="dropdown-item" href="examples.html">Style Examples</a>
-                                          <a class="dropdown-item" href="three-column.html">Three Column</a>
-                                          <a class="dropdown-item" href="one-column.html">One column / no sidebar</a>
-                                          <a class="dropdown-item"  href="text.html">Text / left sidebar</a>
-                                    </div>
-                        </li>
-
-
-                        <li class="nav-item">
-                                <a class="nav-link" href="#">Services</a>
-                        </li>
-
-                        <li class="nav-item">
-                                <a class="nav-link" href="#">Products</a>
-                        </li>
-
-                        <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
-                    
-                    <form class="form-inline header-search-form my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="text" size="10"  placeholder="Search" aria-label="Search">
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                    
-                </div>
-                
-                
-                
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand logo_h" href="index.html"
+              ><img src="img/logo.png" alt=""
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon-bar"></span> <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div
+              class="collapse navbar-collapse offset"
+              id="navbarSupportedContent"
+            >
+              <ul class="nav navbar-nav menu_nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about-us.html">About</a>
+                </li>
+                <li class="nav-item submenu dropdown">
+                  <a
+                    href="#"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    >Pages</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li class="nav-item">
+                      <a class="nav-link" href="courses.html">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="course-details.html"
+                        >Course Details</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="elements.html">Elements</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item submenu dropdown">
+                  <a
+                    href="#"
+                    class="nav-link dropdown-toggle"
+                    data-toggle="dropdown"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    >Blog</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li class="nav-item">
+                      <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="single-blog.html"
+                        >Blog Details</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link search" id="search">
+                    <i class="ti-search"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
+          </div>
         </nav>
+      </div>
+    </header>
+    <!--================ End Header Menu Area =================-->
 
-
-        <!-- Jumbtron / Slider -->
-        <div class="jumbotron-wrap">
-            <div class="container">
-                <div id="mainCarousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="jumbotron">
-                                <h1 class="text-center">Tristique sem vitae metus ornare </h1>
-                                <p class="lead text-center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                                <p class="lead text-center">
-                                        <a class="btn btn-primary btn-lg" href="#" role="button"><i class="fa fa-info"></i> &nbsp; Learn more</a>
-                                    <a class="btn btn-secondary btn-lg" href="#" role="button"><i class="fa fa-gbp"></i> &nbsp; Buy now</a>
-                                </p>
-                            </div>
-
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="jumbotron">
-                                <h1 class="text-center">Cras sit amet nibh libero, in gravida nulla</h1>
-                                <p class="lead text-center">Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
-                                <p class="lead text-center">
-                                        <a class="btn btn-outline-primary btn-lg" href="#" role="button"><i class="fa fa-info"></i> &nbsp; Learn more</a>
-                                    <a class="btn btn-outline-secondary btn-lg" href="#" role="button"><i class="fa fa-gbp"></i> &nbsp; Buy now</a>
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#mainCarousel" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+    <!--================ Start Home Banner Area =================-->
+    <section class="home_banner_area">
+      <div class="banner_inner">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="banner_content text-center">
+                <p class="text-uppercase">
+                  Best online education service In the world
+                </p>
+                <h2 class="text-uppercase mt-4 mb-5" >
+                  One Step Ahead This Season
+                </h2>
+                <div>
+                  <a href="#" class="primary-btn2 mb-3 mb-sm-0">learn more</a>
+                  <a href="#" class="primary-btn ml-sm-3 ml-0">see course</a>
                 </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Home Banner Area =================-->
+
+    <!--================ Start Feature Area =================-->
+    <section class="feature_area section_gap_top">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="main_title">
+              <h2 class="mb-3">Awesome Feature</h2>
+              <p>
+                Replenish man have thing gathering lights yielding shall you
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="single_feature">
+              <div class="icon"><span class="flaticon-student"></span></div>
+              <div class="desc">
+                <h4 class="mt-3 mb-2">Scholarship Facility</h4>
+                <p>
+                  One make creepeth, man bearing theira firmament won't great
+                  heaven
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="single_feature">
+              <div class="icon"><span class="flaticon-book"></span></div>
+              <div class="desc">
+                <h4 class="mt-3 mb-2">Sell Online Course</h4>
+                <p>
+                  One make creepeth, man bearing theira firmament won't great
+                  heaven
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="single_feature">
+              <div class="icon"><span class="flaticon-earth"></span></div>
+              <div class="desc">
+                <h4 class="mt-3 mb-2">Global Certification</h4>
+                <p>
+                  One make creepeth, man bearing theira firmament won't great
+                  heaven
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Feature Area =================-->
+
+    <!--================ Start Popular Courses Area =================-->
+    <div class="popular_courses">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="main_title">
+              <h2 class="mb-3">Our Popular Courses</h2>
+              <p>
+                Replenish man have thing gathering lights yielding shall you
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <!-- single course -->
+          <div class="col-lg-12">
+            <div class="owl-carousel active_course">
+              <div class="single_course">
+                <div class="course_head">
+                  <img class="img-fluid" src="img/courses/c1.jpg" alt="" />
+                </div>
+                <div class="course_content">
+                  <span class="price">$25</span>
+                  <span class="tag mb-4 d-inline-block">design</span>
+                  <h4 class="mb-3">
+                    <a href="course-details.html">Custom Product Design</a>
+                  </h4>
+                  <p>
+                    One make creepeth man bearing their one firmament won't fowl
+                    meat over sea
+                  </p>
+                  <div
+                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
+                  >
+                    <div class="authr_meta">
+                      <img src="img/courses/author1.png" alt="" />
+                      <span class="d-inline-block ml-2">Cameron</span>
+                    </div>
+                    <div class="mt-lg-0 mt-3">
+                      <span class="meta_info mr-4">
+                        <a href="#"> <i class="ti-user mr-2"></i>25 </a>
+                      </span>
+                      <span class="meta_info"
+                        ><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="single_course">
+                <div class="course_head">
+                  <img class="img-fluid" src="img/courses/c2.jpg" alt="" />
+                </div>
+                <div class="course_content">
+                  <span class="price">$25</span>
+                  <span class="tag mb-4 d-inline-block">design</span>
+                  <h4 class="mb-3">
+                    <a href="course-details.html">Social Media Network</a>
+                  </h4>
+                  <p>
+                    One make creepeth man bearing their one firmament won't fowl
+                    meat over sea
+                  </p>
+                  <div
+                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
+                  >
+                    <div class="authr_meta">
+                      <img src="img/courses/author2.png" alt="" />
+                      <span class="d-inline-block ml-2">Cameron</span>
+                    </div>
+                    <div class="mt-lg-0 mt-3">
+                      <span class="meta_info mr-4">
+                        <a href="#"> <i class="ti-user mr-2"></i>25 </a>
+                      </span>
+                      <span class="meta_info"
+                        ><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="single_course">
+                <div class="course_head">
+                  <img class="img-fluid" src="img/courses/c3.jpg" alt="" />
+                </div>
+                <div class="course_content">
+                  <span class="price">$25</span>
+                  <span class="tag mb-4 d-inline-block">design</span>
+                  <h4 class="mb-3">
+                    <a href="course-details.html">Computer Engineering</a>
+                  </h4>
+                  <p>
+                    One make creepeth man bearing their one firmament won't fowl
+                    meat over sea
+                  </p>
+                  <div
+                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
+                  >
+                    <div class="authr_meta">
+                      <img src="img/courses/author3.png" alt="" />
+                      <span class="d-inline-block ml-2">Cameron</span>
+                    </div>
+                    <div class="mt-lg-0 mt-3">
+                      <span class="meta_info mr-4">
+                        <a href="#"> <i class="ti-user mr-2"></i>25 </a>
+                      </span>
+                      <span class="meta_info"
+                        ><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--================ End Popular Courses Area =================-->
+
+    <!--================ Start Registration Area =================-->
+    <div class="section_gap registration_area">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <div class="row clock_sec clockdiv" id="clockdiv">
+              <div class="col-lg-12">
+                <h1 class="mb-3">Register Now</h1>
+                <p>
+                  There is a moment in the life of any aspiring astronomer that
+                  it is time to buy that first telescope. It’s exciting to think
+                  about setting up your own viewing station.
+                </p>
+              </div>
+              <div class="col clockinner1 clockinner">
+                <h1 class="days">150</h1>
+                <span class="smalltext">Days</span>
+              </div>
+              <div class="col clockinner clockinner1">
+                <h1 class="hours">23</h1>
+                <span class="smalltext">Hours</span>
+              </div>
+              <div class="col clockinner clockinner1">
+                <h1 class="minutes">47</h1>
+                <span class="smalltext">Mins</span>
+              </div>
+              <div class="col clockinner clockinner1">
+                <h1 class="seconds">59</h1>
+                <span class="smalltext">Secs</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 offset-lg-1">
+            <div class="register_form">
+              <h3>Courses for Free</h3>
+              <p>It is high time for learning</p>
+              <form
+                class="form_area"
+                id="myForm"
+                action="mail.html"
+                method="post"
+              >
+                <div class="row">
+                  <div class="col-lg-12 form_group">
+                    <input
+                      name="name"
+                      placeholder="Your Name"
+                      required=""
+                      type="text"
+                    />
+                    <input
+                      name="name"
+                      placeholder="Your Phone Number"
+                      required=""
+                      type="tel"
+                    />
+                    <input
+                      name="email"
+                      placeholder="Your Email Address"
+                      pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
+                      required=""
+                      type="email"
+                    />
+                  </div>
+                  <div class="col-lg-12 text-center">
+                    <button class="primary-btn">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--================ End Registration Area =================-->
+
+    <!--================ Start Trainers Area =================-->
+    <section class="trainer_area section_gap_top">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="main_title">
+              <h2 class="mb-3">Our Expert Trainers</h2>
+              <p>
+                Replenish man have thing gathering lights yielding shall you
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center d-flex align-items-center">
+          <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
+            <div class="thumb d-flex justify-content-sm-center">
+              <img class="img-fluid" src="img/trainer/t1.jpg" alt="" />
+            </div>
+            <div class="meta-text text-sm-center">
+              <h4>Mated Nithan</h4>
+              <p class="designation">Sr. web designer</p>
+              <div class="mb-4">
+                <p>
+                  If you are looking at blank cassettes on the web, you may be
+                  very confused at the.
+                </p>
+              </div>
+              <div class="align-items-center justify-content-center d-flex">
+                <a href="#"><i class="ti-facebook"></i></a>
+                <a href="#"><i class="ti-twitter"></i></a>
+                <a href="#"><i class="ti-linkedin"></i></a>
+                <a href="#"><i class="ti-pinterest"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
+            <div class="thumb d-flex justify-content-sm-center">
+              <img class="img-fluid" src="img/trainer/t2.jpg" alt="" />
+            </div>
+            <div class="meta-text text-sm-center">
+              <h4>David Cameron</h4>
+              <p class="designation">Sr. web designer</p>
+              <div class="mb-4">
+                <p>
+                  If you are looking at blank cassettes on the web, you may be
+                  very confused at the.
+                </p>
+              </div>
+              <div class="align-items-center justify-content-center d-flex">
+                <a href="#"><i class="ti-facebook"></i></a>
+                <a href="#"><i class="ti-twitter"></i></a>
+                <a href="#"><i class="ti-linkedin"></i></a>
+                <a href="#"><i class="ti-pinterest"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
+            <div class="thumb d-flex justify-content-sm-center">
+              <img class="img-fluid" src="img/trainer/t3.jpg" alt="" />
+            </div>
+            <div class="meta-text text-sm-center">
+              <h4>Jain Redmel</h4>
+              <p class="designation">Sr. Faculty Data Science</p>
+              <div class="mb-4">
+                <p>
+                  If you are looking at blank cassettes on the web, you may be
+                  very confused at the.
+                </p>
+              </div>
+              <div class="align-items-center justify-content-center d-flex">
+                <a href="#"><i class="ti-facebook"></i></a>
+                <a href="#"><i class="ti-twitter"></i></a>
+                <a href="#"><i class="ti-linkedin"></i></a>
+                <a href="#"><i class="ti-pinterest"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 col-sm-12 single-trainer">
+            <div class="thumb d-flex justify-content-sm-center">
+              <img class="img-fluid" src="img/trainer/t4.jpg" alt="" />
+            </div>
+            <div class="meta-text text-sm-center">
+              <h4>Nathan Macken</h4>
+              <p class="designation">Sr. web designer</p>
+              <div class="mb-4">
+                <p>
+                  If you are looking at blank cassettes on the web, you may be
+                  very confused at the.
+                </p>
+              </div>
+              <div class="align-items-center justify-content-center d-flex">
+                <a href="#"><i class="ti-facebook"></i></a>
+                <a href="#"><i class="ti-twitter"></i></a>
+                <a href="#"><i class="ti-linkedin"></i></a>
+                <a href="#"><i class="ti-pinterest"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--================ End Trainers Area =================-->
+
+    <!--================ Start Events Area =================-->
+    <div class="events_area">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="main_title">
+              <h2 class="mb-3 text-white">Upcoming Events</h2>
+              <p>
+                Replenish man have thing gathering lights yielding shall you
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="single_event position-relative">
+              <div class="event_thumb">
+                <img src="img/event/e1.jpg" alt="" />
+              </div>
+              <div class="event_details">
+                <div class="d-flex mb-4">
+                  <div class="date"><span>15</span> Jun</div>
+
+                  <div class="time-location">
+                    <p>
+                      <span class="ti-time mr-2"></span> 12:00 AM - 12:30 AM
+                    </p>
+                    <p>
+                      <span class="ti-location-pin mr-2"></span> Hilton Quebec
+                    </p>
+                  </div>
+                </div>
+                <p>
+                  One make creepeth man for so bearing their firmament won't
+                  fowl meat over seas great
+                </p>
+                <a href="#" class="primary-btn rounded-0 mt-3">View Details</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="single_event position-relative">
+              <div class="event_thumb">
+                <img src="img/event/e2.jpg" alt="" />
+              </div>
+              <div class="event_details">
+                <div class="d-flex mb-4">
+                  <div class="date"><span>15</span> Jun</div>
+
+                  <div class="time-location">
+                    <p>
+                      <span class="ti-time mr-2"></span> 12:00 AM - 12:30 AM
+                    </p>
+                    <p>
+                      <span class="ti-location-pin mr-2"></span> Hilton Quebec
+                    </p>
+                  </div>
+                </div>
+                <p>
+                  One make creepeth man for so bearing their firmament won't
+                  fowl meat over seas great
+                </p>
+                <a href="#" class="primary-btn rounded-0 mt-3">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-12">
+            <div class="text-center pt-lg-5 pt-3">
+              <a href="#" class="event-link">
+                View All Event <img src="img/next.png" alt="" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--================ End Events Area =================-->
+
+    <!--================ Start Testimonial Area =================-->
+    <div class="testimonial_area section_gap">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="main_title">
+              <h2 class="mb-3">Client say about me</h2>
+              <p>
+                Replenish man have thing gathering lights yielding shall you
+              </p>
+            </div>
+          </div>
         </div>
 
-        <!-- Main content area -->
-        <main class="container">
-            <div class="row">
-                
-                <!-- Main content -->
-                <div class="col-md-8">
-                    <article>
-                        <h2 class="article-title">Introduction to gravity</h2>
+        <div class="row">
+          <div class="testi_slider owl-carousel">
+            <div class="testi_item">
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <img src="img/testimonials/t1.jpg" alt="" />
+                </div>
+                <div class="col-lg-8">
+                  <div class="testi_text">
+                    <h4>Elite Martin</h4>
+                    <p>
+                      Him, made can't called over won't there on divide there
+                      male fish beast own his day third seed sixth seas unto.
+                      Saw from
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testi_item">
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <img src="img/testimonials/t2.jpg" alt="" />
+                </div>
+                <div class="col-lg-8">
+                  <div class="testi_text">
+                    <h4>Davil Saden</h4>
+                    <p>
+                      Him, made can't called over won't there on divide there
+                      male fish beast own his day third seed sixth seas unto.
+                      Saw from
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testi_item">
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <img src="img/testimonials/t1.jpg" alt="" />
+                </div>
+                <div class="col-lg-8">
+                  <div class="testi_text">
+                    <h4>Elite Martin</h4>
+                    <p>
+                      Him, made can't called over won't there on divide there
+                      male fish beast own his day third seed sixth seas unto.
+                      Saw from
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testi_item">
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <img src="img/testimonials/t2.jpg" alt="" />
+                </div>
+                <div class="col-lg-8">
+                  <div class="testi_text">
+                    <h4>Davil Saden</h4>
+                    <p>
+                      Him, made can't called over won't there on divide there
+                      male fish beast own his day third seed sixth seas unto.
+                      Saw from
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testi_item">
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <img src="img/testimonials/t1.jpg" alt="" />
+                </div>
+                <div class="col-lg-8">
+                  <div class="testi_text">
+                    <h4>Elite Martin</h4>
+                    <p>
+                      Him, made can't called over won't there on divide there
+                      male fish beast own his day third seed sixth seas unto.
+                      Saw from
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testi_item">
+              <div class="row">
+                <div class="col-lg-4 col-md-6">
+                  <img src="img/testimonials/t2.jpg" alt="" />
+                </div>
+                <div class="col-lg-8">
+                  <div class="testi_text">
+                    <h4>Davil Saden</h4>
+                    <p>
+                      Him, made can't called over won't there on divide there
+                      male fish beast own his day third seed sixth seas unto.
+                      Saw from
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--================ End Testimonial Area =================-->
 
-                        <p class="article-meta">Posted on <time datetime="2017-05-14">14 May</time> by <a href="#" rel="author">Joe Bloggs</a></p>
-
-                        <p>Welcome to gravity, a free CSS3 &amp; HTML5 responsive web template from <a href="https://zypopwebtemplates.com/" title="ZyPOP">ZyPOP</a>. This template is completely <strong>free</strong> to use permitting a link remains back to  <a href="https://zypopwebtemplates.com/" title="ZyPOP">https://zypopwebtemplates.com/</a>.</p>
-
-                        <p> Should you wish to use this template unbranded you can buy a template license from our website for 8.00 GBP, this will allow you remove all branding related to our site, for more information about this see below.</p>	
-
-                        <p>This template has been tested in:</p>
-
-                        <ul>
-                            <li>Firefox</li>
-                            <li>IE / Edge</li>
-                            <li>Chrome</li>
-                            <li>Safari</li>
-                            <li>iOS / Android</li>
-                        </ul>
-
-                        <a href="#" class="btn btn-primary">Read more</a>
-                        <a href="#" class="btn btn-secondary">Comments</a>
-
-                    </article>
-
-                    <article>
-
-                        <h2 class="article-title">Buy unbranded</h2>
-                        <p class="article-meta">Posted on <time datetime="2013-05-14">14 May</time> by <a href="#" rel="author">Joe Bloggs</a></p>
-
-                        <p>Purchasing a template license for 8.00 GBP (at time of writing around 12 USD) gives you the right to remove any branding including links, logos and source tags relating to ZyPOP. As well as waiving the attribution requirement, your payment will also help us provide continued support for users as well as creating new web templates. Find out more about how to buy at the licensing page on our website which can be accessed at <a href="https://zypopwebtemplates.com/licensing" title="template license">https://zypopwebtemplates.com/licensing</a></p>
-
-                        <h3>Lorem lipsum</h3>
-
-                        <p>Morbi fermentum condimentum felis, commodo vestibulum sem mattis sed. Aliquam magna ante, mollis vitae tincidunt in, malesuada vitae turpis. Sed aliquam libero ut velit bibendum consectetur. Quisque sagittis, est in laoreet semper, enim dui consequat felis, faucibus ornare urna velit nec leo. Maecenas condimentum velit vitae est lobortis fermentum. In tristique sem vitae metus ornare luctus tempus nisl volutpat. Integer et est id nisi tempus pharetra sagittis et libero.</p>
-
-                        <a href="#" class="btn btn-primary">Read more</a>
-                        <a href="#" class="btn btn-secondary">Comments</a>
-                    </article>
-
-
-                    <!-- Example pagination Bootstrap component -->
-                    <nav>
-                        <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
-                        </ul>
-                    </nav>
+    <!--================ Start footer Area  =================-->
+    <footer class="footer-area section_gap">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Top Products</h4>
+            <ul>
+              <li><a href="#">Managed Website</a></li>
+              <li><a href="#">Manage Reputation</a></li>
+              <li><a href="#">Power Tools</a></li>
+              <li><a href="#">Marketing Service</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Brand Assets</a></li>
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Features</h4>
+            <ul>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Brand Assets</a></li>
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 single-footer-widget">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Guides</a></li>
+              <li><a href="#">Research</a></li>
+              <li><a href="#">Experts</a></li>
+              <li><a href="#">Agencies</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6 single-footer-widget">
+            <h4>Newsletter</h4>
+            <p>You can trust us. we only send promo offers,</p>
+            <div class="form-wrap" id="mc_embed_signup">
+              <form
+                target="_blank"
+                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                method="get"
+                class="form-inline"
+              >
+                <input
+                  class="form-control"
+                  name="EMAIL"
+                  placeholder="Your Email Address"
+                  onfocus="this.placeholder = ''"
+                  onblur="this.placeholder = 'Your Email Address'"
+                  required=""
+                  type="email"
+                />
+                <button class="click-btn btn btn-default">
+                  <span>subscribe</span>
+                </button>
+                <div style="position: absolute; left: -5000px;">
+                  <input
+                    name="b_36c4fd991d266f23781ded980_aefe40901a"
+                    tabindex="-1"
+                    value=""
+                    type="text"
+                  />
                 </div>
 
-                
-                <!-- Sidebar -->
-                <aside class="col-md-4">
-                    <div class="sidebar-box">
-                        <h4>Categories</h4>
-                        <div class="list-group list-group-root">
-                            <a class="list-group-item active" href="index.html">Home Page</a>
-                            <a class="list-group-item" href="examples.html">Style Examples</a>
-                            <div class="list-group">
-                                <a class="list-group-item" href="three-column.html">Three Column</a>
-                                <a class="list-group-item" href="one-column.html">One column / no sidebar</a>
-                                <a class="list-group-item" href="text.html">Text / left sidebar</a>	
-                            </div>
-                            <a class="list-group-item" href="three-column.html">Three column layout example</a>
-                            <a class="list-group-item" href="#">Sed aliquam libero ut velit bibendum</a>
-                            <a class="list-group-item" href="#">Maecenas condimentum velit vitae</a>
-                        </div>
-                    </div>
-
-                    <div class="sidebar-box sidebar-box-bg">
-                        <h4>About us</h4>
-                        <p>Aenean nec massa a tortor auctor sodales sed a dolor. Duis vitae lorem sem. Proin at velit vel arcu pretium luctus. <a href="#" class="readmore">Read More &raquo;</a></p>    
-                    </div>
-
-                    <div class="sidebar-box">
-                        <h4>Search site</h4>
-                        <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="text"  placeholder="Search" aria-label="Search">
-                            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                    </div>
-
-                    <div class="sidebar-box">
-                        <h4>Helpful Links</h4>
-                        <ul>
-                            <li><a href="http://www.themeforest.net/?ref=spykawg" title="premium templates">Premium HTML web templates from $10</a></li>
-                            <li><a href="http://www.dreamhost.com/r.cgi?259541" title="web hosting">Cheap web hosting from Dreamhost</a></li>
-                            <li><a href="http://tuxthemes.com" title="Tux Themes">Premium WordPress themes</a></li>
-                        </ul>
-                    </div>
-                </aside> 
-                
-                
-            </div> 
-        </main>
-
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-lists">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm">
-                            <ul>
-                                <li><h4>Proin accumsan</h4></li>
-                                <li><a href="#">Rutrum nulla a ultrices</a></li>
-                                <li><a href="#">Blandit elementum</a></li>
-                                <li><a href="#">Proin placerat accumsan</a></li>
-                                <li><a href="#">Morbi hendrerit libero </a></li>
-                                <li><a href="#">Curabitur sit amet tellus</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm">
-                            <ul>
-                                <li><h4>Condimentum</h4></li>
-                                <li><a href="#">Curabitur sit amet tellus</a></li>
-                                <li><a href="#">Morbi hendrerit libero </a></li>
-                                <li><a href="#">Proin placerat accumsan</a></li>
-                                <li><a href="#">Rutrum nulla a ultrices</a></li>
-                                <li><a href="#">Cras dictum</a></li>
-                            </ul>
-                        </div>   
-                        <div class="col-sm">
-                            <ul>
-                                <li><h4>Suspendisse</h4></li>
-                                <li><a href="#">Morbi hendrerit libero </a></li>
-                                <li><a href="#">Proin placerat accumsan</a></li>
-                                <li><a href="#">Rutrum nulla a ultrices</a></li>
-                                <li><a href="#">Curabitur sit amet tellus</a></li>
-                                <li><a href="#">Donec in ligula nisl.</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm">
-                            <h4>Suspendisse</h4>
-                            <p>Integer mattis blandit turpis, quis rutrum est. Maecenas quis arcu vel felis lobortis iaculis fringilla at ligula. Nunc dignissim porttitor dolor eget porta.</p>
-
-                            <p class="social-icons">
-                                <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-                                <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
-                                <a href="#"><i class="fa fa-youtube fa-2x"></i></a>
-                                <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <div class="info"></div>
+              </form>
             </div>
-            
-            
-            <div class="footer-bottom">
-                    <p class="text-center"><a href="https://zypopwebtemplates.com/">Web Design by ZyPop</a>.</p>
-                    <p class="text-center"><a href="#">Back to top</a></p>
-            </div>
-            
-        </footer>
+          </div>
+        </div>
+        <div class="row footer-bottom d-flex justify-content-between">
+          <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+          <div class="col-lg-4 col-sm-12 footer-social">
+            <a href="#"><i class="ti-facebook"></i></a>
+            <a href="#"><i class="ti-twitter"></i></a>
+            <a href="#"><i class="ti-dribbble"></i></a>
+            <a href="#"><i class="ti-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--================ End footer Area  =================-->
 
-
-
-        <!-- Bootcamp JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
-    </body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="js/owl-carousel-thumb.min.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <!--gmaps Js-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+    <script src="js/gmaps.min.js"></script>
+    <script src="js/theme.js"></script>
+  </body>
 </html>
