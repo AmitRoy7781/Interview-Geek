@@ -12,11 +12,13 @@ def hello_world():
 def video_chat():
     return render_template("videoChat.html")
 
-
 @app.route('/screenSharing')
 def screen_share():
     return render_template("screenSharing.html")
 
+@app.route('/onlineIDE')
+def onlineIDE():
+    return render_template("onlineIDE.html")
 
 
 if __name__ == '__main__':
