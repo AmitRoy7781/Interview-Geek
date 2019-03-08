@@ -1,7 +1,13 @@
 from flask import Flask,render_template
 import os
 
+from iGeekAuth.auth import app as auth
+
+
 app = Flask(__name__)
+
+# authentication blueprint
+app.register_blueprint(auth)
 
 
 @app.route('/')
@@ -17,10 +23,10 @@ def screen_share():
     return render_template("screenSharing.html")
 
 @app.route('/onlineIDE')
-def onlineIDE():
-    return render_template("onlineIDE.html")
+def online_ide():
+    return render_template("onlineide.html")
 
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    app.run(port=8000)
+    app.run(port=8000, debug=True)

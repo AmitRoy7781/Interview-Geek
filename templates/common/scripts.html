@@ -12,3 +12,33 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 <script src="{{ url_for('static', filename='js/gmaps.min.js')}}"></script>
 <script src="{{ url_for('static', filename='js/theme.js')}}"></script>
+
+<script>
+
+    window.onload = function () {
+        check_login_status();
+    }
+
+    function valid(str) {
+        return !(!str || 0 === str.length || !str.trim());
+    }
+
+    function check_login_status() {
+        var username = '{{session["username"]}}';
+
+        if (valid(username)) {
+            document.getElementById("yourself").innerText = "Profile"
+            document.getElementById("signup").innerText = username;
+            document.getElementById("signup").href = "/profile";
+            document.getElementById("signin").innerText = "Log Out";
+            document.getElementById("signin").href = "/auth/logout";
+        }
+        else {
+            document.getElementById("yourself").innerText = "Auth"
+            document.getElementById("signup").innerText = "Sign Up";
+            document.getElementById("signup").href = "/auth/signup";
+            document.getElementById("signin").innerText = "Sign In";
+            document.getElementById("signin").href = "/auth/signin";
+        }
+    }
+</script>

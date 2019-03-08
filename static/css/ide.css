@@ -10,7 +10,7 @@ html, body {
 }
 
 body {
-  background-color: var(--primary-background-colour);
+  background-color: white;
   font-family: 'Exo 2', sans-serif;
 }
 

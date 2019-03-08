@@ -1,0 +1,143 @@
+{% extends "/common/base.html" %}
+
+{% block content %}
+    {% include '/common/header.html' %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up - Interview Geek</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/static/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/static/css/signInstyle.css">
+</head>
+
+    <script>
+
+        window.onload = function () {
+            check_login_status();
+            display_error();
+        }
+        
+        function display_error() {
+            var name = '{{userinfo["name"]}}';
+            var name_msg = '{{userinfo["name_msg"]}}';
+
+            var username = '{{userinfo["username"]}}';
+            var username_msg = '{{userinfo["username_msg"]}}';
+
+            var email = '{{userinfo["email"]}}';
+            var email_msg = '{{userinfo["email_msg"]}}';
+
+            var phone_number = '{{userinfo["phone_number"]}}';
+            var phone_number_msg = '{{userinfo["phone_number_msg"]}}';
+
+            var password_msg = '{{userinfo["password_msg"]}}';
+            var c_password_msg = '{{userinfo["c_password_msg"]}}';
+
+            document.getElementById("name").value = name;
+            if(valid(name_msg))
+            {
+                document.getElementById("name_msg").innerText = name_msg
+            }
+
+            document.getElementById("username").value = username;
+            if(valid(username_msg))
+            {
+                document.getElementById("username_msg").innerText = username_msg
+            }
+
+            document.getElementById("email").value = email;
+            if(valid(email_msg))
+            {
+                document.getElementById("email_msg").innerText = email_msg
+            }
+
+            document.getElementById("phone_number").value = phone_number;
+            if(valid(phone_number_msg))
+            {
+                document.getElementById("phone_number_msg").innerText = phone_number_msg
+            }
+
+            if(valid(password_msg))
+            {
+                document.getElementById("password_msg").innerText = password_msg
+            }
+            if(valid(c_password_msg))
+            {
+                document.getElementById("c_password_msg").innerText = c_password_msg
+            }
+
+        }
+
+
+    </script>
+
+    <div class="main" style="background: white">
+
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Sign up</h2>
+                        <form action="/auth/signup-validation" method="POST" class="register-form" id="register-form">
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="name" id="name" placeholder="Your Name" required="required"/>
+                                <center><span id="name_msg" style="color: red"> </span></center>
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="username" id="username" placeholder="User Name" required="required"/>
+                                <center><span id="username_msg" style="color: red"> </span></center>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Email Address" required="required"/>
+                                <center><span id="email_msg" style="color: red"> </span></center>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-phone-msg"></i></label>
+                                <input type="text" name="phone_number" id="phone_number" placeholder="Phone Number" required="required"/>
+                                <center><span id="phone_number_msg" style="color: red"> </span></center>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="password" placeholder="Password" required="required"/>
+                                <center><span id="password_msg" style="color: red"> </span></center>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="c_password" id="c_password" placeholder="Repeat your password"/>
+                                <center><span id="c_password_msg" style="color: red"> </span></center>
+                            </div>
+{#                            <div class="form-group">#}
+{#                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required="required"/>#}
+{#                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="" class="term-service">Terms of service</a></label>#}
+{#                            </div>#}
+                            <div class="form-group form-button">
+                                <input type="submit" {#  name="signup" id="signup"#} class="form-submit" value="Register"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="/static/img/signup-image.jpg" alt="sing up image"></figure>
+                        <a href="/auth/signin" class="signup-image-link">I am already member</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="/static/vendors/jquery/signInjquery.min.js"></script>
+    <script src="/static/js/signInmain.js"></script>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+{% include '/common/footer.html' %}
+{% endblock %}
