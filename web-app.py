@@ -1,5 +1,8 @@
 from flask import Flask,render_template
 import os
+import sys
+sys.path.append('../')
+
 
 from iGeekAuth.auth import app as auth
 
@@ -9,7 +12,7 @@ app.secret_key = 'NeverEverGiveUp'
 
 
 # authentication blueprint
-# app.register_blueprint(auth)
+app.register_blueprint(auth)
 
 
 @app.route('/')
@@ -30,5 +33,4 @@ def online_ide():
 
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(port=8000)
+    app.run()
