@@ -9,7 +9,7 @@ app.secret_key = 'NeverEverGiveUp'
 
 
 # authentication blueprint
-app.register_blueprint(auth)
+# app.register_blueprint(auth)
 
 
 @app.route('/')
