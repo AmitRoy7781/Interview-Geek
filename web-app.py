@@ -5,6 +5,8 @@ from iGeekAuth.auth import app as auth
 
 
 app = Flask(__name__)
+app.secret_key = 'NeverEverGiveUp'
+
 
 # authentication blueprint
 app.register_blueprint(auth)
