@@ -1,7 +1,5 @@
 from flask import Flask,render_template
 import os
-import sys
-sys.path.append('../')
 
 
 from iGeekAuth.auth import app as auth
