@@ -13,15 +13,12 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="/static/css/signInstyle.css">
+
 </head>
 
     <script>
 
-        window.onload = function () {
-            check_login_status();
-            display_error();
-        }
-        
+
         function display_error() {
             var name = '{{userinfo["name"]}}';
             var name_msg = '{{userinfo["name_msg"]}}';
@@ -37,6 +34,8 @@
 
             var password_msg = '{{userinfo["password_msg"]}}';
             var c_password_msg = '{{userinfo["c_password_msg"]}}';
+
+
 
             document.getElementById("name").value = name;
             if(valid(name_msg))
