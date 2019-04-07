@@ -1,6 +1,6 @@
 import string
 from flask import render_template, request, redirect, session, Blueprint
-from iGeekMongoDB.database import db
+from iGeekFirebase.firebase import auth
 
 app = Blueprint('auth', __name__)
 
@@ -18,7 +18,7 @@ def signUp(data=None):
 def signup_validation():
     if request.method == 'POST':
         data = request.form.to_dict()
-        print(data)
+        # print(data)
         name = data['name']
         username = data['username']
         password = data['password']
@@ -40,10 +40,10 @@ def signup_validation():
             flag = False
             data['username_msg'] = 'Username must be atleast 6 characters.'
 
-        find = db.users.find_one({"username": str(username)})
-        if find is not None:
-            flag = False
-            data['username_msg'] = 'Username already exists'
+        # find = db.users.find_one({"username": str(username)})
+        # if find is not None:
+        #     flag = False
+        #     data['username_msg'] = 'Username already exists'
 
         for ch in username:
             if ch not in string.ascii_letters and ch not in string.digits:
@@ -58,10 +58,10 @@ def signup_validation():
             flag = False
             data['c_password_msg'] = 'Passwords did not match.'
 
-        find = db.users.find_one({"email": str(email)})
-        if find is not None:
-            flag = False
-            data['email_msg'] = 'Email already exists'
+        # find = db.users.find_one({"email": str(email)})
+        # if find is not None:
+        #     flag = False
+        #     data['email_msg'] = 'Email already exists'
 
         if '@' not in email:
             flag = False
@@ -81,10 +81,10 @@ def signup_validation():
 
         if flag is True:
             data.pop('c_password')
-            posts = db.users
-            posts.insert_one(data)
+            auth.create_user_with_email_and_password(email,password)
             return redirect('/auth/signin')
 
+        # print(data)
         return signUp(data)
 
 
@@ -97,25 +97,24 @@ def signin(data=None):
 def login_validation():
     if request.method == 'POST':
         data = request.form.to_dict()
+        print(data)
         username = data['username']
+        email = data['email']
         password = data['password']
 
-        flag = True
-
-        find = db.users.find_one({"username": str(username)})
-
-        if find is None:
-            flag = False
+        if username=="":
             data['username_msg'] = 'Username does not Exist'
-        elif find['password'] != password:
-            flag = False
-            data['password_msg'] = 'Wrong password. Try again.'
-        if flag is False:
+            data['password_msg'] = ""
             return signin(data)
 
-        session['username'] = username
-        return redirect("/")
-
+        try:
+            session['username'] = username
+            auth.sign_in_with_email_and_password(email,password)
+            return redirect("/")
+        except:
+            data['username_msg'] = 'Wrong Username'
+            data['password_msg'] = 'Password did not matched with email. Try again.'
+            return signin(data)
 
 
 
