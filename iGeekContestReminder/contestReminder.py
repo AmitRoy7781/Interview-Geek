@@ -36,16 +36,26 @@ def upcoming_contests():
         endTime = str(x["end"])
         endTime.replace("T", " , ")
         link = x["href"]
-        # duration = x["duration"]
+        duration = int(float(x["duration"]) * 0.000277778)
+
+        if duration >=24:
+            d = int(duration/24)
+            h = duration % 24
+            duration = str(d) + " days "
+            if h >0:
+                duration+= str(h) + " hours "
+
+        else:
+            duration = str(duration) + " hours"
 
         if siteName == "codeforces.com" or siteName == "csacademy.com" or siteName == "hackerrank.com" or siteName=="codechef.com":
             temp = {}
             temp["sitename"] = siteName
             temp["contest_name"] = contestName
-            temp["startTime"] = startTime.replace("T",", ")
-            temp["endTime"] = endTime.replace("T",", ")
+            temp["startTime"] = startTime.replace("T",", ") +" (GMT)"
+            temp["endTime"] = endTime.replace("T",", ") +" (GMT)"
             temp["link"] = link
-            # temp["duration"] = duration
+            temp["duration"] = duration
 
             contestData.append(temp)
             print(x)
