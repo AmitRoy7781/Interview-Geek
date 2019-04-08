@@ -103,6 +103,8 @@ def login_validation():
         username = data['username']
         email = data['email']
         password = data['password']
+        target = data['target']
+
 
         if username=="":
             data['username_msg'] = 'Username does not Exist'
@@ -112,11 +114,11 @@ def login_validation():
         try:
             session['username'] = username
             auth.sign_in_with_email_and_password(email,password)
-            return redirect("/")
+            return redirect(target)
         except:
             data['username_msg'] = 'Wrong Username'
             data['password_msg'] = 'Password did not matched with email. Try again.'
-            return signin(data)
+            return signin(data,target)
 
 
 
