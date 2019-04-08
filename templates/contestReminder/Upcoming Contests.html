@@ -1,0 +1,64 @@
+{% extends "/common/baseIDE.html" %}
+
+{% block content %}
+
+  <script>
+    function display_error() {
+    }
+    </script>
+    {% include '/common/header.html' %}<br/><br/><br/><br/>
+
+    <style>
+    .customTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 17px;
+        }
+        .customTable th, .customTable td {
+            text-align: center;
+            padding: 10px;
+            font-family: Ubuntu;
+        }
+        .customTable tr {
+            border-bottom: 1px solid #ddd;
+            font-family: Ubuntu;
+            font-size: 13px;
+        }
+        .customTable tr.header, .customTable tr:hover {
+            background-color: #f1f1f1;
+        }
+        .textMine
+        {
+            color: black;
+            font-size: 12pt;
+            font-weight: bold;
+            font-family: Consolas;
+        }
+    </style>
+
+        <div align="center">
+            <h2 class="page-header" id="rank_header">Upcoming/Ongoing Contest List</h2>
+            <br/>
+        </div>
+
+    <table id="" class="customTable">
+                    <tr style="background-color: darkblue; color: white">
+                        <th style="width: 10%"> Conest Platform</th>
+                        <th style="width: 20%"> Contest Name</th>
+                        <th style="width: 10%"> Start Time</th>
+                        <th style="width: 10%"> End Time</th>
+                    </tr>
+
+                {% for item in contestInfo %}
+
+                    <tr>
+                    <td class="textMine"> {{ item["sitename"] }} </td>
+                    <td class="textMine"><a href="{{ item["link"] }}"> {{ item["contest_name"] }} </a></td>
+                    <td class="textMine"> {{ item["startTime"] }} </td>
+                    <td class="textMine"> {{ item["endTime"] }}</td>
+                    </tr>
+                {% endfor %}
+    </table>
+{% include '/common/footer.html' %}
+{% endblock %}

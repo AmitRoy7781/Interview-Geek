@@ -3,6 +3,7 @@ import os
 
 
 from iGeekAuth.auth import app as auth
+from iGeekContestReminder.contestReminder import app as contestReminder
 
 
 app = Flask(__name__)
@@ -11,6 +12,9 @@ app.secret_key = 'NeverEverGiveUp'
 
 # authentication blueprint
 app.register_blueprint(auth)
+
+# authentication blueprint
+app.register_blueprint(contestReminder)
 
 
 @app.route('/')
@@ -31,4 +35,4 @@ def online_ide():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=8000,debug=True)
