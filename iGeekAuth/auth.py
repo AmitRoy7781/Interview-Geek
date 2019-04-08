@@ -89,8 +89,10 @@ def signup_validation():
 
 
 @app.route("/auth/signin")
-def signin(data=None):
-    return render_template('auth/signin.html',userinfo=data)
+def signin(data=None,target=None):
+    if target==None:
+        target = "/"
+    return render_template('auth/signin.html',userinfo=data,target=target)
 
 
 @app.route("/auth/signin-validation", methods=['POST', 'GET'])

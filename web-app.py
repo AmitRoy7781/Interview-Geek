@@ -4,6 +4,7 @@ import os
 
 from iGeekAuth.auth import app as auth
 from iGeekContestReminder.contestReminder import app as contestReminder
+from iGeekChat.Chat import app as chat
 
 
 app = Flask(__name__)
@@ -13,8 +14,11 @@ app.secret_key = 'NeverEverGiveUp'
 # authentication blueprint
 app.register_blueprint(auth)
 
-# authentication blueprint
+# contestReminder blueprint
 app.register_blueprint(contestReminder)
+
+# chat blueprint
+app.register_blueprint(chat)
 
 
 @app.route('/')
@@ -32,6 +36,7 @@ def screen_share():
 @app.route('/onlineIDE')
 def online_ide():
     return render_template("onlineide.html")
+
 
 
 if __name__ == '__main__':
