@@ -18,10 +18,6 @@
                 location.href = location.href.split('#')[0] + '#' + (Math.random() * 100).toString().replace('.', '');
                 location.reload();
             }
-            
-            function display_error() {
-                
-            }
         </script>
 
 {#        <link rel="stylesheet" href="https://cdn.webrtc-experiment.com/style.css">#}
@@ -41,6 +37,7 @@
                             <h1>
                                 Start Video Chat
                             </h1>
+                            <br/><br/>
 
 
                         </header>
@@ -51,11 +48,11 @@
                     <span>
                         Private ?? <a href="/socket.io/" target="_blank" title="Setup Private Room!"><code><strong id="unique-token">#123456789</strong></code></a>
                     </span>
-                    <br/>
+                    <br/><br/><br/>
                     <input type="text" id="your-name" placeholder="your-name">
                     <button id="start-broadcasting" class="setup">Start Transmitting Yourself!</button>
                 </section>
-                <br/>
+                <br/><br/><br/><br/><br/><br/>
 
                 <!-- list of all available conferencing rooms -->
                 <table id="rooms-list" style="width: 100%;"></table>
