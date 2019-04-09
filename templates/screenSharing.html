@@ -1,25 +1,25 @@
-
 {% extends "/common/base.html" %}
 
 {% block content %}
     {% include '/common/header.html' %}
 
-    <title>Interview Geek</title>
 
-    <script>
-    function display_error() {
-    }
-    </script>
+
+    <title>Interview Geek</title>
 
     <section class="home_banner_area">
         <div class="banner_inner">
             <div class="container">
 
 
-        <script>
+<script>
             if(!location.hash.replace('#', '').length) {
                 location.href = location.href.split('#')[0] + '#' + (Math.random() * 100).toString().replace('.', '');
                 location.reload();
+            }
+            
+            function display_error() {
+                
             }
         </script>
         <script>
@@ -72,7 +72,7 @@
                 border-radius: 5px;
             }
             p { padding: 1em; }
-            
+
         </style>
     </head>
 
@@ -103,15 +103,16 @@
                 <section id="unique-token" style="display: none; text-align: center; padding: 20px;"></section>
             </section>
 
-            <script>
+                </center>
+
+                <script>
                 // Muaz Khan     - https://github.com/muaz-khan
                 // MIT License   - https://www.webrtc-experiment.com/licence/
                 // Documentation - https://github.com/muaz-khan/WebRTC-Experiment/tree/master/Pluginfree-Screen-Sharing
                 var config = {
                     // via: https://github.com/muaz-khan/WebRTC-Experiment/tree/master/socketio-over-nodejs
                     openSocket: function(config) {
-                        // var SIGNALING_SERVER = 'https://socketio-over-nodejs2.herokuapp.com:443/';
-                        var SIGNALING_SERVER = 'https://webrtcweb.com:9559/';
+                        var SIGNALING_SERVER = 'https://socketio-over-nodejs2.herokuapp.com:443/';
                         config.channel = config.channel || location.href.replace(/\/|:|#|%|\.|\[|\]/g, '');
                         var sender = Math.round(Math.random() * 999999999) + 999999999;
                         io.connect(SIGNALING_SERVER).emit('new-channel', {
@@ -197,19 +198,16 @@
                 }
                 function captureUserMedia(callback) {
                     var video = document.createElement('video');
-                    video.setAttribute('alignment', "center")
                     video.muted = true;
                     video.volume = 0;
                     try {
                         video.setAttributeNode(document.createAttribute('autoplay'));
                         video.setAttributeNode(document.createAttribute('playsinline'));
                         video.setAttributeNode(document.createAttribute('controls'));
-
                     } catch (e) {
                         video.setAttribute('autoplay', true);
                         video.setAttribute('playsinline', true);
                         video.setAttribute('controls', true);
-
                     }
                     if(navigator.getDisplayMedia || navigator.mediaDevices.getDisplayMedia) {
                         function onGettingSteam(stream) {
@@ -285,11 +283,10 @@
                     uniqueToken.style.display = 'block';
                 }
             </script>
+                        <script src="https://cdn.webrtc-experiment.com/commits.js" async> </script>
 
-        </article>
-    </div>
+            </div>
         </div>
     </section>
-
     {% include '/common/footer.html' %}
 {% endblock %}
