@@ -6,6 +6,7 @@ from  operator import itemgetter
 from iGeekAuth.auth import signin
 from flask import Flask,render_template,jsonify,request,Blueprint,session,redirect
 from iGeekFirebase.firebase import firebase
+
 db = firebase.database()
 
 app = Blueprint('chat', __name__)
