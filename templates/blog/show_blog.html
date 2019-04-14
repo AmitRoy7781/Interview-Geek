@@ -68,9 +68,12 @@
                 <br>
 
                 {% if item[3] != "" %}
+
+                {% for img in item[3] %}
                 <center>
-                <img src="{{ item[3] |safe }}" title="{{ item[0] }}"><br><br>
+                <img src="{{ img |safe }}" title="{{ item[0] }}"><br><br>
                 </center>
+                    {% endfor%}
                 {% endif %}
 
                 <text style="color: black">{{ item[4]| safe }}</text>

@@ -1,8 +1,10 @@
 import string
 from flask import render_template, request, redirect, session, Blueprint
 from iGeekFirebase.firebase import firebase
+from passlib.hash import sha256_crypt
 
 db = firebase.database()
+auth = firebase.auth()
 
 app = Blueprint('auth', __name__)
 
@@ -99,9 +101,11 @@ def signup_validation():
 
         if flag is True:
             data.pop('c_password')
+            data["password"] = sha256_crypt.encrypt(password)
+
             print(data)
             db.child("Users").push(data)
-            # auth.create_user_with_email_and_password(email,password)
+            auth.create_user_with_email_and_password(email,password)
             return redirect('/auth/signin')
 
         # print(data)
@@ -143,16 +147,21 @@ def login_validation():
         if flag == False:
             data['username_msg'] = 'Username does not Exist'
 
+        email = ""
         for user in users:
-            if user["username"] == username and user["password"] != password:
+            if user["username"] == username and sha256_crypt.verify( password,user["password"]) != True:
                 flag = False
                 data['password_msg'] = 'Wrong password. Try again.'
                 break
+            elif user["username"] == username and sha256_crypt.verify( password,user["password"]) == True:
+                flag = True
+                email = user["email"]
 
         if flag == False:
             return signin(data,target)
 
         session['username'] = username
+        auth.sign_in_with_email_and_password(email,password)
         return redirect(target)
 
 

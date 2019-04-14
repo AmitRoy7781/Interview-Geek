@@ -44,12 +44,11 @@ class Prototype:
             tmp.append(item["author"])
             # tmp.append("Author Nai")
             tmp.append(item["date"])
-            tmp.append(item["imgurl"])
+            imgurl = item["imgurl"].split(" ")
+            tmp.append(imgurl)
+            print(imgurl)
 
-            if "htmlcontent" in item.keys():
-                tmp.append(item["htmlcontent"])
-            else:
-                tmp.append(item["content"])
+            tmp.append(item["content"])
 
             message.append(tmp)
 
@@ -80,31 +79,30 @@ def add():
 
             soup = BeautifulSoup(str(htmlcontent),'lxml')
 
-            htmlcontent = ""
             content = ""
-
             paragraph = soup.find_all("p")
+
             for i in range(1,len(paragraph)):
 
                 para=paragraph[i]
-
-                htmlcontent += str(para)
                 content += str(para.text)
                 content += " "
 
-            # print("Content: ", content)
-
-            blog_message["htmlcontent"] = htmlcontent
             blog_message["content"] = content
 
-            imgurl = soup.find("img")
+            imgurl = soup.find_all("img")
+
             if imgurl != None:
-                blog_message["imgurl"] = imgurl["src"]
+                blog_message["imgurl"] = ""
+                first = False
+                for images in imgurl:
+                    if first == True:
+                        blog_message["imgurl"] += " "
+                    blog_message["imgurl"]+=images["src"]
+                    first = True
             else:
                 blog_message["imgurl"] = ""
 
-                # multiple image er jonne korte hobe...
-            # for images in soup.find_all("img"):
 
 
             current_utc_time = datetime.datetime.utcnow()
@@ -114,13 +112,9 @@ def add():
             # print(current_bd_time)
 
             blog_message["date"] = str(current_bd_time)
-            # posts = db.blog
-            # posts.insert_one(blog_message)
 
             print(blog_message)
             db.child("Blogs").push(blog_message)
-
-            #print(title+htmlcontent+str(now))
 
             return redirect('/blog/')
 
