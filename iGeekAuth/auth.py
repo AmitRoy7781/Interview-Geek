@@ -104,8 +104,12 @@ def signup_validation():
             data["password"] = sha256_crypt.encrypt(password)
 
             print(data)
-            db.child("Users").push(data)
             auth.create_user_with_email_and_password(email,password)
+            auth.sign_in_with_email_and_password(email,password)
+
+            data["uid"] = auth.current_user["localId"]
+            db.child("Users").push(data)
+
             return redirect('/auth/signin')
 
         # print(data)
@@ -162,6 +166,7 @@ def login_validation():
 
         session['username'] = username
         auth.sign_in_with_email_and_password(email,password)
+        # print(auth.current_user)
         return redirect(target)
 
 
