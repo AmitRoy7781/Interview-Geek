@@ -97,10 +97,13 @@ def add():
             blog_message["htmlcontent"] = htmlcontent
             blog_message["content"] = content
 
-            imgurl = soup.find("img")["src"]
-            blog_message["imgurl"] = imgurl
+            imgurl = soup.find("img")
+            if imgurl != None:
+                blog_message["imgurl"] = imgurl["src"]
+            else:
+                blog_message["imgurl"] = ""
 
-            # multiple image er jonne korte hobe...
+                # multiple image er jonne korte hobe...
             # for images in soup.find_all("img"):
 
 

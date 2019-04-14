@@ -1,6 +1,8 @@
 import string
 from flask import render_template, request, redirect, session, Blueprint
-from iGeekFirebase.firebase import auth
+from iGeekFirebase.firebase import firebase
+
+db = firebase.database()
 
 app = Blueprint('auth', __name__)
 
@@ -18,7 +20,7 @@ def signUp(data=None):
 def signup_validation():
     if request.method == 'POST':
         data = request.form.to_dict()
-        # print(data)
+        print(data)
         name = data['name']
         username = data['username']
         password = data['password']
@@ -39,6 +41,17 @@ def signup_validation():
         if len(username) < 6:
             flag = False
             data['username_msg'] = 'Username must be atleast 6 characters.'
+
+        user_data = db.child("Users").get().val()
+        users = []
+
+        for user in user_data:
+            users.append(user_data[user])
+
+        for user in users:
+            if user["username"]==username:
+                flag = False
+                data['username_msg'] = 'Username already exists'
 
         # find = db.users.find_one({"username": str(username)})
         # if find is not None:
@@ -69,6 +82,11 @@ def signup_validation():
         elif '.' not in email.split('@')[1]:
             flag = False
             data['email_msg'] = 'Email format is not correct'
+        else:
+            for user in users:
+                if user["email"] == email:
+                    flag = False
+                    data['email_msg'] = 'Email already exists'
 
         if len(phone_number) < 11:
             flag = False
@@ -81,7 +99,9 @@ def signup_validation():
 
         if flag is True:
             data.pop('c_password')
-            auth.create_user_with_email_and_password(email,password)
+            print(data)
+            db.child("Users").push(data)
+            # auth.create_user_with_email_and_password(email,password)
             return redirect('/auth/signin')
 
         # print(data)
@@ -101,25 +121,39 @@ def login_validation():
         data = request.form.to_dict()
         print(data)
         username = data['username']
-        email = data['email']
+        # email = data['email']
         password = data['password']
         target = data['target']
 
 
-        if username=="":
-            data['username_msg'] = 'Username does not Exist'
-            data['password_msg'] = ""
-            return signin(data)
 
-        try:
-            session['username'] = username
-            auth.sign_in_with_email_and_password(email,password)
-            return redirect(target)
-        except:
-            data['username_msg'] = 'Wrong Username'
-            data['password_msg'] = 'Password did not matched with email. Try again.'
+        user_data = db.child("Users").get().val()
+        users = []
+
+        for user in user_data:
+            users.append(user_data[user])
+
+        flag = False
+
+        for user in users:
+            if user["username"] == username:
+                flag = True
+                break
+
+        if flag == False:
+            data['username_msg'] = 'Username does not Exist'
+
+        for user in users:
+            if user["username"] == username and user["password"] != password:
+                flag = False
+                data['password_msg'] = 'Wrong password. Try again.'
+                break
+
+        if flag == False:
             return signin(data,target)
 
+        session['username'] = username
+        return redirect(target)
 
 
 @app.route("/auth/logout")
