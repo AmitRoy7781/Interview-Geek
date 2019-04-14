@@ -35,6 +35,8 @@ def upcoming_contests():
         startTime.replace("T", " , ")
         endTime = str(x["end"])
         endTime.replace("T", " , ")
+        sortKey = str(x["end"])
+        sortKey =  sortKey.replace("T", " ")
         link = x["href"]
         duration = int(float(x["duration"]) * 0.000277778)
 
@@ -54,11 +56,13 @@ def upcoming_contests():
             temp["contest_name"] = contestName
             temp["startTime"] = startTime.replace("T",", ") +" (GMT)"
             temp["endTime"] = endTime.replace("T",", ") +" (GMT)"
+            temp["sortKey"] = sortKey
             temp["link"] = link
             temp["duration"] = duration
 
+            # print(temp)
             contestData.append(temp)
-            print(x)
 
-
+    contestData = sorted(contestData, key=lambda k: datetime.strptime(str(k["sortKey"]), "%Y-%m-%d %H:%M:%S"),
+                               reverse=False)
     return render_template('/contestReminder/Upcoming Contests.html',contestInfo=contestData)

@@ -103,7 +103,7 @@ def signup_validation():
             data.pop('c_password')
             data["password"] = sha256_crypt.encrypt(password)
 
-            print(data)
+            # print(data)
             auth.create_user_with_email_and_password(email,password)
             auth.sign_in_with_email_and_password(email,password)
 
