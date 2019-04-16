@@ -6,7 +6,7 @@ from iGeekAuth.auth import app as auth
 from iGeekContestReminder.contestReminder import app as contestReminder
 from iGeekChat.Chat import app as chat
 from iGeekBlog.blog import app as blog
-
+from iGeekProfile.profile import app as profile
 
 
 app = Flask(__name__)
@@ -24,6 +24,9 @@ app.register_blueprint(chat)
 
 #blog blueprint
 app.register_blueprint(blog)
+
+#blog blueprint
+app.register_blueprint(profile)
 
 @app.route('/')
 def hello_world():

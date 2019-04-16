@@ -24,8 +24,13 @@
                     <br/><br/><br/>
                 </p>
                 <div>
-                  <a href="/auth/signup" class="primary-btn2 mb-3 mb-sm-0">Sign Up</a>
-                  <a href="/auth/signin" class="primary-btn ml-sm-3 ml-0">Sign In</a>
+                    {% if session.username %}
+                    <a id="signup2" href="/profile" class="primary-btn2 mb-3 mb-sm-0">{{ session.username }}</a>
+                    <a id="signin2" href="/auth/logout" class="primary-btn ml-sm-3 ml-0">Log Out</a>
+                    {% else %}
+                    <a id="signup2" href="/auth/signup" class="primary-btn2 mb-3 mb-sm-0">Sign Up</a>
+                    <a id="signin2" href="/auth/signin" class="primary-btn ml-sm-3 ml-0">Sign In</a>
+                    {% endif %}
                 </div>
               </div>
             </div>
