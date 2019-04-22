@@ -107,8 +107,8 @@ def signup_validation():
             auth.create_user_with_email_and_password(email,password)
             auth.sign_in_with_email_and_password(email,password)
 
-            data["uid"] = auth.current_user["localId"]
-            db.child("Users").push(data)
+            # data["uid"] = auth.current_user["localId"]
+            db.child("Users").child(str(auth.current_user["localId"])).set(data)
 
             return redirect('/auth/signin')
 
