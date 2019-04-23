@@ -160,7 +160,7 @@
 
                 firebase.initializeApp(config);
                 {#selectedFile.name = "{{ session.username }}" + new Date() + ".jpg"#}
-                alert(selectedFile)
+                alert("Uploading... Please Wait...")
 
                 var uploadTask = firebase.storage().ref().child('images/{{ session.username }}/' + selectedFile.name).put(selectedFile, metadata);
                 uploadTask.resume();
@@ -189,7 +189,7 @@
                         document.getElementById("dp").setAttribute("value",downloadURL)
                         document.getElementById("imgurl").setAttribute("src",downloadURL)
                         document.getElementById("imgurl").setAttribute("value",downloadURL)
-                        alert(downloadURL);
+                        alert("Upload Completed...");
 
                     });
                 });
