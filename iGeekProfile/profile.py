@@ -149,7 +149,7 @@ def editProfile():
             user_data["password"] = sha256_crypt.encrypt(data["password"])
 
 
-            db.child("Users").child(str(session['uid'])).set(data)
+            db.child("Users").child(str(session['uid'])).set(user_data)
             return showProfile()
 
         return render_template('/profile/editProfile.html',user_data=data)
