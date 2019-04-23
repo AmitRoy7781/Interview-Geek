@@ -4,6 +4,12 @@
 
   <script>
     function display_error() {
+       }
+
+    function keypress() {
+
+        {#alert("HI2")#}
+        document.getElementById("chat_btn").click();
     }
     </script>
     {% include '/common/header.html' %}<br/><br/><br/><br/>
@@ -136,7 +142,8 @@
     </div>
   </nav>
 
-  <div id="sourceEditor"></div>
+  <div id="sourceEditor" onkeypress="keypress()"></div>
+<button id="chat_btn"  hidden style="width: 50px;height: 50px"> Click Me</button>
 
   <div class="container-fluid">
     <div class="row labels">
@@ -164,5 +171,42 @@
       <div id="outputEditor" class="col-xs-6 col-sm-6 col-md-6 col-lg-6"></div>
     </div>
   </div>
+
+
+    <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
+    <script>
+
+        $(function () {
+            $('#chat_btn').on('click', function () {
+
+
+                var author = '{{ session["username"] }}';
+                var message = document.getElementById('sourceEditor').innerHTML;
+
+                {#alert(message)#}
+
+                if (message.trim() != "") {
+                    $.post('/mymessage', {'author': author,'data': message}, function () {
+                    });
+                }
+            });
+            // Enable pusher logging - don't include this in production
+            Pusher.logToConsole = true;
+            var pusher = new Pusher('76e1eff5e36b22e9f0ef', {
+                cluster: 'ap2',
+                forceTLS: true
+            });
+            var channel = pusher.subscribe('my-channel');
+            channel.bind('new-message', function (data) {
+                var author = data.author;
+                var message = data.data;
+
+                {#alert("Hiiii")#}
+                if (author != '{{ session.username }}')
+                    document.getElementById("sourceEditor").innerHTML = message
+            });
+        });
+    </script>
+
 {% include '/common/footer.html' %}
 {% endblock %}

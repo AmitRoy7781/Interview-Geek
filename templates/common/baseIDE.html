@@ -3,10 +3,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.png')}}" type="image/png" />
      {% if title %}
         <title>{{ title }} - Interview Geek</title>
@@ -26,6 +23,22 @@
   <body>
     {% block content %} {% endblock %}
 
-{#    {% include '/common/scripts.html' %}#}
+<script>
+
+    window.onload = function () {
+        check_login_status();
+        display_error();
+    }
+
+    function valid(str) {
+        return !(!str || 0 === str.length || !str.trim());
+    }
+
+    function check_login_status() {
+
+    }
+</script>
+
+
 </body>
 </html>

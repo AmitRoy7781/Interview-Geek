@@ -1,0 +1,141 @@
+{% extends "/common/baseChat.html" %}
+
+{% block content %}
+
+  <script>
+    function display_error() {
+        {#var x = {{ messages }}#}
+
+
+        var input = document.getElementById("chat_text");
+
+
+
+    }
+
+    function keypress() {
+
+        alert("Hi")
+        document.getElementById("chat_btn").click();
+    }
+    </script>
+    {% include '/common/header.html' %}<br/><br/><br/><br/>
+
+    <head>
+        <script>
+
+        </script>
+        <title>chatROOM - interview Geek</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"/>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <style type="text/css">
+            .fixed-panel {
+                min-height: 500px;
+                max-height: 500px;
+            }
+            .media-list {
+                overflow: auto;
+            }
+            .scroll {
+                height: 450px;
+                overflow: scroll;
+            }
+        </style>
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            .column1 {
+                float: left;
+                width: 10%;
+            }
+            .column2 {
+                float: left;
+                width: 80%;
+                alignment: left;
+            }
+            .column3 {
+                float: left;
+                width: 10%;
+                alignment: right;
+            }
+            .column4 {
+                float: right;
+                width: 80%;
+                {#alignment: right;#}
+            }
+            /* Clearfix (clear floats) */
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+        </style>
+    </head>
+
+
+    <body style="overflow-y: hidden;">
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <h1 align="center">Chat Room - interview Geek</h1>
+
+    <center>
+    <div>
+        <div class="row " style="padding-top:10px;">
+
+            <textarea id="chat_text" onkeypress="keypress()" style="width: 1000px;height: 1000px"></textarea>
+            <br/>
+        </div>
+    </div>
+
+            <button id="chat_btn"  hidden style="width: 50px;height: 50px"> Click Me</button>
+
+        </center>
+
+    <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script>
+
+
+
+        $(function () {
+            $('#chat_btn').on('click', function () {
+                var author = '{{ session["username"] }}';
+                var message = $('#chat_text').val();
+
+                alert("hi2")
+
+                if (message.trim() != "") {
+                    $.post('/mymessage', {'author': author,'data': message}, function () {
+                    });
+                }
+            });
+            // Enable pusher logging - don't include this in production
+            Pusher.logToConsole = true;
+            var pusher = new Pusher('76e1eff5e36b22e9f0ef', {
+                cluster: 'ap2',
+                forceTLS: true
+            });
+            var channel = pusher.subscribe('my-channel');
+            channel.bind('new-message', function (data) {
+                var author = data.author;
+                var message = data.data;
+
+                if (author != '{{ session.username }}')
+                    document.getElementById("chat_text").value = message
+            });
+        });
+    </script>
+
+    </body>
+
+
+    {% include '/common/footer.html' %}
+{% endblock %}
