@@ -116,6 +116,9 @@
                     document.getElementById("imgurl").setAttribute("src",imgurl);
                     document.getElementById("imgurl").setAttribute("value",imgurl);
                 }
+                else {
+                    document.getElementById("dp").setAttribute("src","/static/img/anonymous.png");
+                }
 
             }
 
@@ -189,7 +192,7 @@
                         document.getElementById("dp").setAttribute("value",downloadURL)
                         document.getElementById("imgurl").setAttribute("src",downloadURL)
                         document.getElementById("imgurl").setAttribute("value",downloadURL)
-                        alert("Upload Completed...");
+                        alert("Uploading Completed...");
 
                     });
                 });
@@ -343,7 +346,7 @@
                     <div class="signup-image">
 
 
-                        <figure><img id="dp" src="/static/img/anonymous.png" alt="sing up image"></figure>
+                        <figure><img id="dp" src="" alt="DP"></figure>
                         <h6>Upload a different photo...</h6>
 
                         <input type="file" class="form-control" onchange="readURL(this)" name="propic" id="propic" accept="">
