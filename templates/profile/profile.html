@@ -8,140 +8,171 @@
     <title>Interview Geek</title>
 
 
-	<!-- Favicon -->   
-{#	<link href="/static/img/favicon.ico" rel="shortcut icon"/>#}
+    <!-- Favicon -->
+    {#	<link href="/static/img/favicon.ico" rel="shortcut icon"/>#}
 
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
 
-	<!-- Stylesheets -->
-{#	<link rel="stylesheet" href="/static/profilecss/bootstrap.min.css"/>#}
-	<link rel="stylesheet" href="/static/profilecss/font-awesome.min.css"/>
-	<link rel="stylesheet" href="/static/profilecss/flaticon.css"/>
-	<link rel="stylesheet" href="/static/profilecss/owl.carousel.css"/>
-	<link rel="stylesheet" href="/static/profilecss/magnific-popup.css"/>
-	<link rel="stylesheet" href="/static/profilecss/style.css"/>
+    <!-- Stylesheets -->
+    {#	<link rel="stylesheet" href="/static/profilecss/bootstrap.min.css"/>#}
+    <link rel="stylesheet" href="/static/profilecss/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/static/profilecss/flaticon.css"/>
+    <link rel="stylesheet" href="/static/profilecss/owl.carousel.css"/>
+    <link rel="stylesheet" href="/static/profilecss/magnific-popup.css"/>
+    <link rel="stylesheet" href="/static/profilecss/style.css"/>
 
 
-	<!--[if lt IE 9]>
+    <!--[if lt IE 9]>
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-</head>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
-	
-	<!-- Header section start -->
-	<header class="header-section">
-		<div class="container-fluid">
-			<div class="row">
-{#				<div class="col-md-4">#}
-{#					<div class="site-logo">#}
-{#						<h2><a href="#">Civic</a></h2>#}
-{#						<p>Enhance your online presence</p>#}
-{#					</div>#}
-{#				</div>#}
+    <script>
+
+        function display_error() {
+
+            var name = '{{ user_data["name"] }}';
+            var username = '{{ session.username }}';
+            var email = '{{ session.email }}';
+            var phone_number = '{{ user_data["phone_number"] }}';
+
+            var bio = '{{ user_data["bio"] }}';
+            var institution = '{{ user_data["institution"] }}';
+            var address = '{{ user_data["address"] }}';
+            var dob = '{{ user_data["dob"] }}';
+
+
+            var cf_handle = '{{ user_data["cf_handle"] }}';
+            var topcoder_handle = '{{ user_data["topcoder_handle"] }}';
+            var hackerrank_handle = '{{ user_data["hackerrank_handle"] }}';
+            var codechef_handle = '{{ user_data["codechef_handle"] }}';
+            var uhunt_handle = '{{ user_data["uhunt_handle"] }}';
+
+            var github = '{{ user_data["github"] }}';
+            var linkedin = '{{ user_data["linkedin"] }}';
+
+            var imgurl = '{{ user_data["imgurl"] }}'
+
+            document.getElementById("name").innerText = name;
+            document.getElementById("username").innerText = username;
+            document.getElementById("email").innerText = email;
+            document.getElementById("phone_number").innerText = phone_number;
+
+            document.getElementById("bio").innerText = "Bio: " +  bio;
+            document.getElementById("institution").innerText = institution;
+            document.getElementById("address").innerText = address;
+            document.getElementById("dob").innerText = dob;
+
+            document.getElementById("cf_handle").innerText = cf_handle;
+            document.getElementById("topcoder_handle").innerText = topcoder_handle;
+            document.getElementById("topcoder_handle").innerText = topcoder_handle;
+            document.getElementById("codechef_handle").innerText = codechef_handle;
+            document.getElementById("uhunt_handle").innerText = uhunt_handle;
+
+
+            document.getElementById("github").innerText = github;
+            document.getElementById("linkedin").innerText = linkedin;
+
+            if (imgurl != "N/A")
+                document.getElementById("imgurl").setAttribute("src",imgurl);
+
+
+
+        }
+
+    </script>
+
+    </head>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header section start -->
+    <header class="header-section">
+        <div class="container-fluid">
+            <div class="row">
+                {#				<div class="col-md-4">#}
+                {#					<div class="site-logo">#}
+                {#						<h2><a href="#">Civic</a></h2>#}
+                {#						<p>Enhance your online presence</p>#}
+                {#					</div>#}
+                {#				</div>#}
                 <br><br><br>
-				<div class="col-md-12 text-md-right header-buttons">
+                <div class="col-md-12 text-md-right header-buttons">
                     <br><br><br><br><br>
-					<a href="\edit_profile" class="site-btn">Edit Profile</a>
-{#					<a href="#" class="site-btn">Discover me</a>#}
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- Header section end -->
+                    <a href="\show_edit_profile" class="site-btn">Edit Profile</a>
+                    {#					<a href="#" class="site-btn">Discover me</a>#}
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header section end -->
 
-	<!-- Hero section start -->
-	<section class="hero-section spad">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xl-10 offset-xl-1">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="hero-text">
-								<h2 id="name">Amit Roy</h2>
-								<p id="bio">I'm a undergraduate student in University of Dhaka completing my B.Sc in Computer Science.</p>
-							</div>
-							<div class="hero-info">
-								<h2>General Info</h2>
-								<ul>
-									<li id="dob"><span>Date of Birth</span>29 December, 1997</li>
-									<li id="address"><span>Address</span>Dhaka, Bangladesh</li>
-									<li id="email"><span>E-mail</span>aroy7298@gmail.com</li>
-									<li id="phone"><span>Phone </span>01763007067</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<figure class="hero-image" style="width: auto">
-								<img src="/static/profileimg/DP.jpg" alt="5">
-							</figure>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Hero section end -->
-
-
-{#	<!-- Contact section start -->#}
-{#	<section class="contact-section spad">#}
-{#		<div class="container-fluid">#}
-{#			<div class="row">#}
-{#				<div class="col-xl-8 offset-xl-2">#}
-{#					<div class="section-title">#}
-{#						<h2>Contact Me</h2>#}
-{#					</div>#}
-{#					<form class="contact-form">#}
-{#						<div class="row">#}
-{#							<div class="col-md-6">#}
-{#								<input type="text" placeholder="Name">#}
-{#							</div>#}
-{#							<div class="col-md-6">#}
-{#								<input type="text" placeholder="E-mail">#}
-{#							</div>#}
-{#							<div class="col-md-12">#}
-{#								<input type="text" placeholder="Subject">#}
-{#								<textarea placeholder="Message"></textarea>#}
-{#							</div>#}
-{#						</div>#}
-{#						<div class="text-md-right">#}
-{#							<button class="site-btn">Send message</button>#}
-{#						</div>#}
-{#					</form>#}
-{#				</div>#}
-{#			</div>#}
-{#		</div>#}
-{#	</section>#}
-{#	<!-- Contact section end -->#}
-
-{#	<!-- Footer section start -->#}
-{#	<footer class="footer-section">#}
-{#		<div class="container text-center">#}
-{#			<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->#}
-{#Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>#}
-{#<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->#}
-{#</div>#}
-{#		</div>#}
-{#	</footer>#}
-{#	<!-- Footer section end -->#}
+    <!-- Hero section start -->
+    <section class="hero-section spad">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero-text">
+                                <h2 id="name">Amit Roy</h2>
+                                <p id="bio">Bio: I'm a undergraduate student in University of Dhaka completing my B.Sc in
+                                    Computer Science.</p>
+                            </div>
+                            <div class="hero-info">
+                                <h2>Personal Info</h2>
+                                <ul>
+                                    <li><span>Username</span> <span  id="username"> AmitRoy7</span></li>
+                                    <li ><span>E-mail</span> <span  id="email"> aroy7298@gmail.com</span></li>
+                                    <li><span>Phone Number</span> <span id="phone_number">01763007067</span></li>
+                                    <li><span>Institution</span> <span  id="institution">University of Dhaka</span></li>
+                                    <li ><span>Address</span> <span id="address">Dhaka, Bangladesh</span></li>
+                                    <li ><span>Date of Birth</span> <span id="dob"> 29 December, 1997 </span></li>
+                                </ul>
+                                <br/><br/><br/>
+                                <h2>Online Judge Handle</h2>
+                                <ul>
+                                    <li ><span>Codeforces </span> <span id="cf_handle">AimpliesJ</span></li>
+                                    <li ><span>TopCoder </span> <span id="topcoder_handle">N/A </span></li>
+                                    <li ><span>HackerRank </span> <span id="hackerrank_handle">N/A</span></li>
+                                    <li ><span>CodeChef </span> <span id="codechef_handle">AmitRoy7</span></li>
+                                    <li ><span>uHUNT</span> <span id="uhunt_handle">AmitRoy7</span></li>
+                                </ul>
+                                <br/><br/><br/>
+                                <h2>Social Media</h2>
+                                <ul>
+                                    <li ><span>Github </span> <span id="github">AmitRoy7</span></li>
+                                    <li ><span>Linkedin</span> <span id="linkedin">AmitRoy7</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <figure class="hero-image" style="width: auto">
+                                <img id="imgurl" src="" alt="5">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero section end -->
 
 
-	<!--====== Javascripts & Jquery ======-->
-	<script src="/static/profilejs/jquery-2.1.4.min.js"></script>
-	<script src="/static/profilejs/bootstrap.min.js"></script>
-	<script src="/static/profilejs/owl.carousel.min.js"></script>
-	<script src="/static/profilejs/magnific-popup.min.js"></script>
-	<script src="/static/profilejs/circle-progress.min.js"></script>
-	<script src="/static/profilejs/main.js"></script>
 
-        <!-- commits.js is useless for you! -->
-        <script src="https://cdn.webrtc-experiment.com/commits.js" async> </script>
+    <!--====== Javascripts & Jquery ======-->
+    <script src="/static/profilejs/jquery-2.1.4.min.js"></script>
+    <script src="/static/profilejs/bootstrap.min.js"></script>
+    <script src="/static/profilejs/owl.carousel.min.js"></script>
+    <script src="/static/profilejs/magnific-popup.min.js"></script>
+    <script src="/static/profilejs/circle-progress.min.js"></script>
+    <script src="/static/profilejs/main.js"></script>
 
-     {% include '/common/footer.html' %}
+    <!-- commits.js is useless for you! -->
+    <script src="https://cdn.webrtc-experiment.com/commits.js" async></script>
+
+    {% include '/common/footer.html' %}
 {% endblock %}

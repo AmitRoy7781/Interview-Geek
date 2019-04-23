@@ -103,6 +103,22 @@ def signup_validation():
             data.pop('c_password')
             data["password"] = sha256_crypt.encrypt(password)
 
+            data["address"] = "N/A"
+            data["dob"] = "N/A"
+            data["institution"] = "N/A"
+            data["imgurl"] = "N/A"
+            data["bio"] = "N/A"
+
+            data["cf_handle"] = "N/A"
+            data["topcoder_handle"] = "N/A"
+            data["hackerrank_handle"] = "N/A"
+            data["codechef_handle"] = "N/A"
+            data["uhunt_handle"] = "N/A"
+
+            data["github"] = "N/A"
+            data["linkedin"] = "N/A"
+
+
             # print(data)
             auth.create_user_with_email_and_password(email,password)
             auth.sign_in_with_email_and_password(email,password)
@@ -164,8 +180,11 @@ def login_validation():
         if flag == False:
             return signin(data,target)
 
-        session['username'] = username
+
         auth.sign_in_with_email_and_password(email,password)
+        session['username'] = username
+        session['email'] = email
+        session['uid'] = auth.current_user['localId']
         # print(auth.current_user)
         return redirect(target)
 
@@ -174,5 +193,9 @@ def login_validation():
 def logout():
     if 'username' in session.keys():
         session.pop('username')
+    if 'email' in session.keys():
+        session.pop('email')
+    if 'uid' in session.keys():
+        session.pop('uid')
 
     return redirect('/')
