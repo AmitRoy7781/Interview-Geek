@@ -59,7 +59,7 @@
             document.getElementById("email").innerText = email;
             document.getElementById("phone_number").innerText = phone_number;
 
-            document.getElementById("bio").innerText = "Bio: " +  bio;
+            document.getElementById("bio").innerText = "Bio: " + bio;
             document.getElementById("institution").innerText = institution;
             document.getElementById("address").innerText = address;
             document.getElementById("dob").innerText = dob;
@@ -75,10 +75,9 @@
             document.getElementById("linkedin").innerText = linkedin;
 
             if (imgurl != "N/A")
-                document.getElementById("imgurl").setAttribute("src",imgurl);
+                document.getElementById("imgurl").setAttribute("src", imgurl);
             else
-                document.getElementById("imgurl").setAttribute("src","/static/img/anonymous.png")
-
+                document.getElementById("imgurl").setAttribute("src", "/static/img/anonymous.png")
 
 
         }
@@ -92,24 +91,7 @@
     </div>
 
     <!-- Header section start -->
-    <header class="header-section">
-        <div class="container-fluid">
-            <div class="row">
-                {#				<div class="col-md-4">#}
-                {#					<div class="site-logo">#}
-                {#						<h2><a href="#">Civic</a></h2>#}
-                {#						<p>Enhance your online presence</p>#}
-                {#					</div>#}
-                {#				</div>#}
 
-                <div class="col-md-12 text-md-right header-buttons">
-                    <br><br><br><br><br>
-                    <a href="\show_edit_profile" class="site-btn">Edit Profile</a>
-                    {#					<a href="#" class="site-btn">Discover me</a>#}
-                </div>
-            </div>
-        </div>
-    </header>
     <!-- Header section end -->
 
     <!-- Hero section start -->
@@ -120,34 +102,37 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero-text">
-                                <h2 id="name">Amit Roy</h2>
-                                <p id="bio">Bio: I'm a undergraduate student in University of Dhaka completing my B.Sc in
+                                <br/><br/><br/>
+                                <text style="font-size: 60px; color: black" id="name">Amit Roy</text>
+                                <br/><br/>
+                                <p id="bio" style="font-size: 30px;">Bio: I'm a undergraduate student in University of
+                                    Dhaka completing my B.Sc in
                                     Computer Science.</p>
                             </div>
                             <div class="hero-info">
                                 <h2>Personal Info</h2>
                                 <ul>
-                                    <li><span>Username</span> <span  id="username"> AmitRoy7</span></li>
-                                    <li ><span>E-mail</span> <span  id="email"> aroy7298@gmail.com</span></li>
+                                    <li><span>Username</span> <span id="username"> AmitRoy7</span></li>
+                                    <li><span>E-mail</span> <span id="email"> aroy7298@gmail.com</span></li>
                                     <li><span>Phone Number</span> <span id="phone_number">01763007067</span></li>
-                                    <li><span>Institution</span> <span  id="institution">University of Dhaka</span></li>
-                                    <li ><span>Address</span> <span id="address">Dhaka, Bangladesh</span></li>
-                                    <li ><span>Date of Birth</span> <span id="dob"> 29 December, 1997 </span></li>
+                                    <li><span>Institution</span> <span id="institution">University of Dhaka</span></li>
+                                    <li><span>Address</span> <span id="address">Dhaka, Bangladesh</span></li>
+                                    <li><span>Date of Birth</span> <span id="dob"> 29 December, 1997 </span></li>
                                 </ul>
                                 <br/><br/><br/>
                                 <h2>Online Judge Handle</h2>
                                 <ul>
-                                    <li ><span>Codeforces </span> <span id="cf_handle">AimpliesJ</span></li>
-                                    <li ><span>TopCoder </span> <span id="topcoder_handle">N/A </span></li>
-                                    <li ><span>HackerRank </span> <span id="hackerrank_handle">N/A</span></li>
-                                    <li ><span>CodeChef </span> <span id="codechef_handle">AmitRoy7</span></li>
-                                    <li ><span>uHUNT</span> <span id="uhunt_handle">AmitRoy7</span></li>
+                                    <li><span>Codeforces </span> <span id="cf_handle">AimpliesJ</span></li>
+                                    <li><span>TopCoder </span> <span id="topcoder_handle">N/A </span></li>
+                                    <li><span>HackerRank </span> <span id="hackerrank_handle">N/A</span></li>
+                                    <li><span>CodeChef </span> <span id="codechef_handle">AmitRoy7</span></li>
+                                    <li><span>uHUNT</span> <span id="uhunt_handle">AmitRoy7</span></li>
                                 </ul>
                                 <br/><br/><br/>
                                 <h2>Social Media</h2>
                                 <ul>
-                                    <li ><span>Github </span> <span id="github">AmitRoy7</span></li>
-                                    <li ><span>Linkedin</span> <span id="linkedin">AmitRoy7</span></li>
+                                    <li><span>Github </span> <span id="github">AmitRoy7</span></li>
+                                    <li><span>Linkedin</span> <span id="linkedin">AmitRoy7</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -155,6 +140,17 @@
                             <figure class="hero-image" style="width: auto">
                                 <img id="imgurl" src="" alt="5">
                             </figure>
+                            <header class="header-section">
+
+                                <div class="row">
+                                    <div class="col-md-12 text-md-right header-buttons">
+                                        
+                                        <a href="\show_edit_profile" class="site-btn">Edit Profile</a>
+                                        {#					<a href="#" class="site-btn">Discover me</a>#}
+                                    </div>
+                                </div>
+
+                            </header>
                         </div>
                     </div>
                 </div>
@@ -162,6 +158,7 @@
         </div>
     </section>
     <!-- Hero section end -->
+
 
 
 
