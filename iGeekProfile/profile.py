@@ -11,10 +11,24 @@ from passlib.hash import sha256_crypt
 
 db = firebase.database()
 auth = firebase.auth()
-
-db = firebase.database()
-
 app = Blueprint('profile', __name__)
+
+def getHash(input):
+    hash_value = 0
+    p = 1
+    base = 67
+    mod = 961748927
+    for x in input:
+        hash_value += (ord(x) * p)
+        hash_value %= mod
+        p = p * base
+        p %= mod
+
+    return str(hash_value)
+
+def verify_hash(password1,password2):
+    return getHash(password1)==password2
+
 
 @app.route('/profile/')
 def showProfile():
@@ -146,7 +160,7 @@ def editProfile():
             user_data["github"] = data["github"]
             user_data["linkedin"] = data["linkedin"]
 
-            user_data["password"] = sha256_crypt.encrypt(data["password"])
+            user_data["password"] = getHash(data["password"])
 
 
             db.child("Users").child(str(session['uid'])).set(user_data)
