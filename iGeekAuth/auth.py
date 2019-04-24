@@ -124,7 +124,7 @@ def signup_validation():
             data["address"] = "N/A"
             data["dob"] = "N/A"
             data["institution"] = "N/A"
-            data["imgurl"] = "N/A"
+            data["imgurl"] = "https://firebasestorage.googleapis.com/v0/b/interview-geek.appspot.com/o/anonymous.png?alt=media&token=25f83f1c-ec01-49bc-a8f3-dad6e4a786eb"
             data["bio"] = "N/A"
 
             data["cf_handle"] = "N/A"
