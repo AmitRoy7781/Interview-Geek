@@ -9,6 +9,24 @@ auth = firebase.auth()
 app = Blueprint('auth', __name__)
 
 
+def getHash(input):
+    hash_value = 0
+    p = 1
+    base = 67
+    mod = 961748927
+    for x in input:
+        hash_value += (ord(x) * p)
+        hash_value %= mod
+        p = p * base
+        p %= mod
+
+    return hash_value
+
+def verify_hash(password1,password2):
+    return getHash(password1)==password2
+
+
+
 @app.route("/auth/signup")
 def signUp(data=None):
 
@@ -101,7 +119,7 @@ def signup_validation():
 
         if flag is True:
             data.pop('c_password')
-            data["password"] = sha256_crypt.encrypt(password)
+            data["password"] = getHash(password)
 
             data["address"] = "N/A"
             data["dob"] = "N/A"
@@ -169,11 +187,11 @@ def login_validation():
 
         email = ""
         for user in users:
-            if user["username"] == username and sha256_crypt.verify( password,user["password"]) != True:
+            if user["username"] == username and verify_hash( password,user["password"]) != True:
                 flag = False
                 data['password_msg'] = 'Wrong password. Try again.'
                 break
-            elif user["username"] == username and sha256_crypt.verify( password,user["password"]) == True:
+            elif user["username"] == username and verify_hash( password,user["password"]) == True:
                 flag = True
                 email = user["email"]
 

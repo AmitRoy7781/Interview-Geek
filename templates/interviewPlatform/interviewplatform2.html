@@ -142,7 +142,7 @@
     </div>
   </nav>
 
-  <div id="sourceEditor" onkeypress="keypress()"></div>
+  <div id="sourceEditor" onkeypress="keypress()" onchange="keypress()" onkeyup="keypress()" onk></div>
 <button id="chat_btn"  hidden style="width: 50px;height: 50px"> Click Me</button>
 
   <div class="container-fluid">
@@ -183,7 +183,7 @@
                 var author = '{{ session["username"] }}';
                 var message = document.getElementById('sourceEditor').innerHTML;
 
-                {#alert(message)#}
+                alert(message)
 
                 if (message.trim() != "") {
                     $.post('/mymessage', {'author': author,'data': message}, function () {

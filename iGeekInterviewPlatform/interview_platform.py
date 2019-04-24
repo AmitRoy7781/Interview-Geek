@@ -50,26 +50,19 @@ def message():
     if 'username' not in session.keys():
         return signin(None, "/interview_platform/")
 
-    print(request.form.to_dict())
+    # print(request.form.to_dict())
     try:
-
-        # username = request.form.get('author')
-        # message = request.form.get('message')
-        #
-        # #print(request.form.to_dict())
-        #
-        # new_message ={}
-        # new_message["author"] = username
-        # new_message["message"] = message
-        # posts = db.chat
-        # posts.insert_one(new_message)
 
         author =request.form.get('author')
         msg = request.form.get('data')
+        language = request.form.get('language')
+        input = request.form.get('input')
+        output = request.form.get('output')
 
-        print(author, " ", message)
+        # print(author, " ", message)
 
-        pusher_client.trigger('my-channel', 'new-message', {'author': author,'data': msg})
+        pusher_client.trigger('my-channel', 'new-message', {'author': author,'data': msg,
+        'language':language,'input':input,'output':output})
 
         return render_template('/interviewPlatform/interviewplatform2.html')
 
