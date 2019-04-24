@@ -139,7 +139,7 @@ def signup_validation():
 
             # print(data)
             auth.create_user_with_email_and_password(email,password)
-            # auth.sign_in_with_email_and_password(email,password)
+            auth.sign_in_with_email_and_password(email,password)
 
             # data["uid"] = auth.current_user["localId"]
             db.child("Users").child(str(auth.current_user["localId"])).set(data)
@@ -200,6 +200,8 @@ def login_validation():
 
 
         auth.sign_in_with_email_and_password(email,password)
+        print(str(auth.current_user["localId"]))
+        print(db.child("Users").child(str(auth.current_user["localId"])).get().val())
         imgurl = db.child("Users").child(str(auth.current_user["localId"])).get().val()["imgurl"]
         session['username'] = username
         session['email'] = email
