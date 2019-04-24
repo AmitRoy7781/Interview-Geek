@@ -40,7 +40,7 @@ def signUp(data=None):
 def signup_validation():
     if request.method == 'POST':
         data = request.form.to_dict()
-        print(data)
+        # print(data)
         name = data['name']
         username = data['username']
         password = data['password']
@@ -139,7 +139,7 @@ def signup_validation():
 
             # print(data)
             auth.create_user_with_email_and_password(email,password)
-            auth.sign_in_with_email_and_password(email,password)
+            # auth.sign_in_with_email_and_password(email,password)
 
             # data["uid"] = auth.current_user["localId"]
             db.child("Users").child(str(auth.current_user["localId"])).set(data)
@@ -200,9 +200,12 @@ def login_validation():
 
 
         auth.sign_in_with_email_and_password(email,password)
+        imgurl = db.child("Users").child(str(auth.current_user["localId"])).get().val()["imgurl"]
         session['username'] = username
         session['email'] = email
         session['uid'] = auth.current_user['localId']
+        session['imgurl'] = imgurl
+        print(imgurl)
         # print(auth.current_user)
         return redirect(target)
 
@@ -215,5 +218,8 @@ def logout():
         session.pop('email')
     if 'uid' in session.keys():
         session.pop('uid')
+
+    if 'imgurl' in session.keys():
+        session.pop('imgurl')
 
     return redirect('/')

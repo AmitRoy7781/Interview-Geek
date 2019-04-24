@@ -111,6 +111,7 @@ class ConcreteObserver(Observer):
 
             username = request.form.get('author')
             message = request.form.get('message')
+            imgurl = request.form.get('imgurl')
 
             #print(request.form.to_dict())
 
@@ -118,8 +119,9 @@ class ConcreteObserver(Observer):
             new_message["author"] = username
             new_message["message"] = message
             new_message["date"] = str(datetime.now())
+            new_message['imgurl'] = imgurl
             db.child("Chat").push(new_message)
-            pusher_client.trigger('my-channel', 'new-message', {'author': username, 'message': message})
+            pusher_client.trigger('my-channel', 'new-message', {'author': username, 'message': message,'imgurl':imgurl})
 
             return render_template('chat/chat.html')
 
