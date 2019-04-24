@@ -20,7 +20,7 @@ def getHash(input):
         p = p * base
         p %= mod
 
-    return hash_value
+    return str(hash_value)
 
 def verify_hash(password1,password2):
     return getHash(password1)==password2
