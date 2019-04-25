@@ -8,6 +8,7 @@ from iGeekChat.Chat import app as chat
 from iGeekBlog.blog import app as blog
 from iGeekProfile.profile import app as profile
 from iGeekInterviewPlatform.interview_platform import app as interviewplatform
+from Interview.dashboard import app as dashboard
 
 
 app = Flask(__name__)
@@ -32,6 +33,9 @@ app.register_blueprint(profile)
 #interview platform blueprint
 app.register_blueprint(interviewplatform)
 
+#dashboard blueprint
+app.register_blueprint(dashboard)
+
 @app.route('/')
 def hello_world():
     return render_template("index.html")
@@ -47,7 +51,6 @@ def screen_share():
 @app.route('/onlineIDE')
 def online_ide():
     return render_template("onlineide.html")
-
 
 
 if __name__ == '__main__':

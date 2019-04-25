@@ -33,7 +33,7 @@
             document.getElementById("signup").href = "/profile";
             document.getElementById("signin").innerText = "Log Out";
             document.getElementById("signin").href = "/auth/logout";
-
+            document.getElementById("dashboard").hidden = false;
         }
         else {
             document.getElementById("yourself").innerText = "Auth"
@@ -41,6 +41,7 @@
             document.getElementById("signup").href = "/auth/signup";
             document.getElementById("signin").innerText = "Sign In";
             document.getElementById("signin").href = "/auth/signin";
+            document.getElementById("dashboard").hidden = true;
         }
     }
 </script>

@@ -1,0 +1,266 @@
+{% extends "/common/base.html" %}
+
+{% block content %}
+
+    {% include '/common/header.html' %}<br/><br/><br/><br/>
+
+    <style>
+    .customTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 17px;
+        }
+        .customTable th, .customTable td {
+            text-align: center;
+            padding: 10px;
+            font-family: Ubuntu;
+        }
+        .customTable tr {
+            border-bottom: 1px solid #ddd;
+            font-family: Ubuntu;
+            font-size: 13px;
+        }
+        .customTable tr.header, .customTable tr:hover {
+            background-color: #f1f1f1;
+        }
+        .textMine
+        {
+            color: black;
+            font-size: 12pt;
+            font-weight: bold;
+            font-family: Consolas;
+        }
+
+        #popUp_bg
+        {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            left: 0;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        #popUp_window
+        {
+            width: 600px;
+            height: 400px;
+            background-color: white;
+            border-radius: 5px;
+            text-align: center;
+            position: fixed;
+            left: 50%;
+            margin-left: -260px;
+            top: 50%;
+            margin-top: -200px;
+        }
+        #close_popUp
+        {
+            color: red;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 20px;
+            transform: rotate(45deg);
+            cursor: pointer;
+        }
+
+        #popUp_bg2
+        {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            left: 0;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        #popUp_window2
+        {
+            width: 500px;
+            height: 300px;
+            background-color: white;
+            border-radius: 5px;
+            text-align: center;
+            position: fixed;
+            left: 50%;
+            margin-left: -260px;
+            top: 50%;
+            margin-top: -200px;
+        }
+    </style>
+    <script type="text/javascript">
+
+        function display_error() {}
+
+        function openPopUp() {
+            console.log(document.getElementById("popUp_bg"));
+            document.getElementById("popUp_bg").style.display = "block";
+        }
+        function closePopUp() {
+            document.getElementById("popUp_bg").style.display = "none";
+        }
+
+        {#setInterval(function(){#}
+            {#document.getElementById("popUp_bg2").style.display = "block";#}
+            {#return;#}
+        {#    date = '{{ tuple["date"] }}';#}
+        {#    if(!date)  return;#}
+        {##}
+            {#date.replace("-", "/").join;#}
+        {##}
+        {#    console.log("aaaaaaaaaaaaaaaaaaaaaaaa");#}
+        {#    console.log(date);#}
+        {#    date = new Date(date);#}
+        {#    console.log("bbbbbbbbbbbbbbbbbbbbbbbbb");#}
+        {#    console.log(date);#}
+        {#    date -= 360;#}
+            {#currentTime = new Date();#}
+            {##}
+        {#    var dateObj = new Date();#}
+        {#    var month = dateObj.getUTCMonth() + 1;#}
+        {#    var day = dateObj.getUTCDate();#}
+        {#    var year = dateObj.getUTCFullYear();#}
+        {##}
+        {#    newdate = year + "/" + month + "/" + day;#}
+        {#    currentTime = new Date(newdate);#}
+        {#    console.log("assdhl");#}
+        {#    console.log(currentTime);#}
+        {##}
+            {##}
+            {#console.log("xxx");#}
+            {#console.log(date);#}
+            {#console.log("yyy");#}
+            {#console.log(currentTime);#}
+        {##}
+        {#    var dif = date - currentTime;#}
+        {#    var tym = '{{ tuple["time"] }}';#}
+            {#var v = tym.split(":");#}
+        {##}
+            {#tym = (parseInt(v[0]) * 60) + parseInt(v[1]);#}
+            {#dif -= tym;#}
+            {#dif /= 60000;#}
+        {#    console.log("zzz");#}
+        {#    console.log(dif);#}
+        {##}
+        {#    if(dif <= 2 && dif > -6)#}
+        {#    {#}
+        {#        document.getElementById("popUp_bg2").style.display = "block";#}
+        {#    }#}
+        {#}, 1000000000000000);#}
+        
+        function getLink() {
+            var link = "https://interviewgeek.herokuapp.com/p2pchatting#";
+            link += (Math.random() * 100).toString().replace('.', '');
+            document.getElementById('link').value = link;
+        }
+    </script>
+
+    <br>
+    <br>
+
+    {% if list | length == 0 %}
+        <div align="center">
+            <h2 class="page-header" id="rank_header">No Upcoming Interview Available</h2>
+        </div>
+    {% else %}
+        <div align="center">
+            <h2 class="page-header" id="rank_header">UPCOMING INTERVIEWS</h2>
+        </div>
+        <table id="" class="customTable">
+            <tr style="background-color: darkblue; color: white">
+                <th style="width: 20%"> Interview Date </th>
+                <th style="width: 20%"> Interview Time </th>
+                <th style="width: 20%"> User Name </th>
+                <th style="width: 40%"> Interview Link </th>
+            </tr>
+
+            {% for item in list %}
+                <tr>
+                    <td class="textMine"> {{ item["date"] }}</td>
+                    <td class="textMine"> {{ item["time"] }}</td>
+                    <td class="textMine"> {{ item["username"] }}</td>
+                    <td class="textMine">
+                        <form action="/openIDE" method="post">
+{#                            <a href="/openIDE">#}
+{#                                #}
+{#                                Join Interview#}
+{#                            </a>#}
+                            <input type="text" id="Ilink" name="Ilink" value="{{ item["link"] }}" hidden>
+                            <input type="submit" value="Join Interview">
+                        </form>
+                    </td>
+{#                    {% if item["status"] == "N/A" %}#}
+{#                        <td class="textMine"> {{ item["status"] }}</td>#}
+{#                    {% else %}#}
+{#                        href="/startInterview"#}
+{#                    <a class="nav-link" href="/p2pchatting" onclick="window.open('/p2pchatting', 'newwindow', 'width=device-width, height=device-height');" target="_blank">Video Chat</a>#}
+{#                        <td class="textMine" href="/p2pchatting" onclick="window.open('/p2pchatting', 'newwindow', 'width=device-width, height=device-height');" target="_blank"> {{ item["status"] }}</td>#}
+{#                    {% endif %}#}
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+    <br>
+    <br>
+    <div align="center">
+        <a id="scheduleInterview" class="primary-btn2 mb-3 mb-sm-0" onclick="openPopUp()" style="color: #e0a800">Schedule Interview</a>
+    </div>
+    <br>
+    <br>
+
+    <div id="popUp_bg">
+        <div id="popUp_window">
+            <div id="close_popUp" onclick="closePopUp()">
+                +
+            </div>
+            <br>
+            <br>
+            <form action="/scheduleInterview" method="post">
+                <h5> Enter Candidate User Name </h5>
+                <input type="text" id="username" name="username" placeholder="User Name" required="required"/>
+                <br>
+                <br>
+                <h5>Select Interview Time</h5>
+                <input type="date" id="date" name="date">
+                <br>
+                <br>
+                <input type="time" id="time" name="time">
+                <br>
+                <br>
+                <input class="primary-btn2 mb-3 mb-sm-0" type="Submit" onclick="getLink()">
+                <input type="hidden" id="link" name="link"/>
+            </form>
+        </div>
+    </div>
+
+    <div id="popUp_bg2">
+        <div id="popUp_window2">
+            <br>
+            <br>
+            <p style="color: black">
+                You have an interview with Amit within 1 minute.
+            </p>
+            <br>
+            <form action="/openIDE">
+                <button class="primary-btn2 mb-3 mb-sm-0">
+                    Enter
+                </button>
+            </form>
+            <br>
+            <form action="/updateDB">
+                <button class="primary-btn2 mb-3 mb-sm-0">
+                    Cancel
+                </button>
+            </form>
+        </div>
+    </div>
+
+{% include '/common/footer.html' %}
+{% endblock %}

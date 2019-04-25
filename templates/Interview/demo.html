@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript">
+        function get() {
+            alert("xxxxxxxxxx");
+            alert(document.getElementsByName('dateTime').value);
+            {#alert(document.getElementById('time').value);#}
+            alert(document.getElementById("time").value);
+        }
+    </script>
+</head>
+<body>
+ <input type="datetime-local" id="dateTime" name="dateTime">
+ <button onclick="get()">
+     ok
+ </button>
+ <input type="time" id="time" onchange="get()">
+</body>
+</html>

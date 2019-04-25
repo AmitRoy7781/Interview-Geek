@@ -2,11 +2,148 @@
 
 {% block content %}
 
-    <script>
+    <script type="text/javascript">
         function display_error() {}
+
+        {#var input = document.getElementById("sourceEditor");
+        // Execute a function when the user releases a key on the keyboard
+        input.addEventListener("keyup", function (event) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Number 13 is the "Enter" key on the keyboard
+            #}{#if (event.keyCode === 13) #}{#}{#
+            #}{#    // Trigger the button element with a click#}{#
+            #}{#    document.getElementById("chat_btn").click();#}{#
+            #}{#{}#}{#
+        });#}
+
+            $(function () {
+                {#var message = $('#sourceEditor').val();#}
+                alert("xxxxxxxx")
+                var code = document.getElementById("sourceEditor").innerText;
+                $.post('/updateCode', {'code': code}, function () {
+                });
+
+                {#sourceEditor#}
+                {#var username = '{{ session["username"] }}';#}
+                {#$('#chat_btn').on('click', function () {#}
+                {#    var message = $('#chat_text').val();#}
+                {#    if (message.trim() != "") {#}
+                {#        $.post('/message', {'author': username, 'message': message}, function () {#}
+                {#            $('#chat_text').val('');#}
+                {#        });#}
+                {#    }#}
+                {#{});#}
+
+
+                // Enable pusher logging - don't include this in production
+                Pusher.logToConsole = true;
+                var pusher = new Pusher('76e1eff5e36b22e9f0ef', {
+                    cluster: 'ap2',
+                    forceTLS: true
+                });
+                var channel = pusher.subscribe('my-channel');
+                channel.bind('new-data', function (data) {
+                    document.getElementById("sourceEditor").innerText = data;
+
+                    {#var name = data.author;#}
+                    {#var message = data.message;#}
+                    {#if(username == name) {#}
+                    {#    var message_template =#}
+                    {#        '<div class="row" style="padding-right: 2%; padding-top: 1%; padding-bottom: 1%">\n' +#}
+                    {#            '<div class="column3" style="padding-top: 1%; float: right;" align="right">\n' +#}
+                    {#                '<img src="../../static/img/avater.jpg" alt="\n' +#}
+                    {#                    name +#}
+                    {#                    '"\n' +#}
+                    {#                    'title="You"\n' +#}
+                    {#                    'style="height: 75px; width: 75px; border-radius: 50%">\n' +#}
+                    {#            '</div>\n' +#}
+                    {#            '<div class="column4" style="padding-top: 2%; float: right;" align="right">\n' +#}
+                    {#                '<p style="background-color: cyan;\n' +#}
+                    {#                    'padding-left: 2%; padding-right: 2%;\n' +#}
+                    {#                    'padding-bottom: 1%; padding-top: 1%;\n' +#}
+                    {#                    'border-radius: 1%;\n' +#}
+                    {#                    'font-size: 14px; color: black; width: fit-content"\n' +#}
+                    {#                    'align="right">\n' +#}
+                    {#                    '<label style="font: bold; font-size: 15px">\n' +#}
+                    {#                        name +#}
+                    {#                    '</label>\n' +#}
+                    {#                    '<br>\n' +#}
+                    {#                        message +#}
+                    {#                    '</p>\n' +#}
+                    {#            '</div>\n' +#}
+                    {#        '</div>\n';#}
+                    {#    $('#content').append(message_template);#}
+                    {#{}#}
+                    {#else {#}
+                    {#    var message_template =#}
+                    {#        '<div class="row" style="padding-left: 2%; padding-top: 1%; padding-bottom: 1%">\n' +#}
+                    {#        '<div class="column1">\n' +#}
+                    {#        '<img src="../../static/img/avater.jpg"\n' +#}
+                    {#        'title="\n' +#}
+                    {#        name +#}
+                    {#        '"\n' +#}
+                    {#        'style="height: 75px; width: 75px; border-radius: 50%">\n' +#}
+                    {#        '</div>\n' +#}
+                    {#        '<div class="column2" style="padding-top: 1%">\n' +#}
+                    {#        '<p style="background-color: greenyellow;\n' +#}
+                    {#        'padding-left: 2%; padding-right: 2%;\n' +#}
+                    {#        'padding-bottom: 1%; padding-top: 1%;\n' +#}
+                    {#        'border-radius: 1%;\n' +#}
+                    {#        'font-size: 14px; color: black;\n' +#}
+                    {#        'width: fit-content">\n' +#}
+                    {#        '<label style="font: bold; font-size: 15px">\n' +#}
+                    {#        name +#}
+                    {#        '</label>\n' +#}
+                    {#        '<br>\n' +#}
+                    {#        message +#}
+                    {#        '</p>\n' +#}
+                    {#        '</div>\n' +#}
+                    {#        '</div>\n';#}
+                    {#    $('#content').append(message_template);#}
+                    {#    var beep = new Audio()#}
+                    {#    beep.src = "../../static/sounds/hangout_message.mp3"#}
+                    {#    beep.play()#}
+                    {#{}#}
+                    {#var messageBody = document.getElementById('messageBody');#}
+                    {#messageBody.scrollTop = messageBody.scrollHeight;#}
+                });
+            });
+        }
+
+        {#function update() {#}
+        {#    var code = document.getElementById("sourceEditor").innerText;#}
+            {#alert(code);#}
+        {#    console.log(code);#}
+        {##}
+        {#    $.post('/updateCode', {'code': code}, function () {});#}
+        {##}
+        {##}
+        {#    // Enable pusher logging - don't include this in production#}
+        {#    Pusher.logToConsole = true;#}
+        {#    var pusher = new Pusher('76e1eff5e36b22e9f0ef', {#}
+        {#        cluster: 'ap2',#}
+        {#        forceTLS: true#}
+        {#    });#}
+        {##}
+            {#var channel = pusher.subscribe('my-channel');#}
+            {#channel.bind('new-code', function (data) {#}
+            {#    document.getElementById("sourceEditor").innerText = data;#}
+            {#{});#}
+        {#{}#}
     </script>
 
-{#    {% include '/common/header.html' %}<br/><br/><br/><br/>#}
+{#    <script type="text/css">#}
+{#        editorStyle#}
+{#        {#}
+{#            width: 100%;#}
+{#            height: 100px;#}
+{#        }#}
+{#    </script>#}
+    
+{#    {% include '/common/header.html' %}#}
+{#    <br/><br/><br/><br/>#}
+    
 <head>
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -61,7 +198,7 @@
   <nav class=" navbar-default ">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="https://ide.judge0.com">
             Online IDE - Interview Geek
         </a>
       </div>
@@ -137,6 +274,9 @@
   </nav>
 
   <div id="sourceEditor"></div>
+{#    <textarea id="sourceEditor">#}
+{##}
+{#    </textarea>#}
 
   <div class="container-fluid">
     <div class="row labels">
