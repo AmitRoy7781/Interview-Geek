@@ -11,9 +11,10 @@
 
         <script>
             if(!location.hash.replace('#', '').length) {
-                alert(location.href);
-                location.href = location.href.split('#')[0] + '#' + (Math.random() * 100).toString().replace('.', '');
-                alert(location.href);
+                {#alert(location.href);#}
+                {#location.href = location.href.split('#')[0] + '#' + (Math.random() * 100).toString().replace('.', '');#}
+                {#alert(location.href);#}
+                location.href = '{{ link }}';
                 location.reload();
             }
 
@@ -21,7 +22,7 @@
 
         {#    $(document).ready(function() {#}
         {#    $("#start-broadcasting").trigger('click');#}
-        {#});#}
+
         </script>
 
 {#        <link rel="stylesheet" href="https://cdn.webrtc-experiment.com/style.css">#}

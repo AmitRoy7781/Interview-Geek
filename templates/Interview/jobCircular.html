@@ -114,7 +114,7 @@
         {#    {#}
         {#        document.getElementById("popUp_bg2").style.display = "block";#}
         {#    }#}
-        {#}, 1000000000000000);#}
+
     </script>
 
     <br>
@@ -124,14 +124,15 @@
         </div>
     {% else %}
         <div align="center">
-            <h2 class="page-header" id="rank_header">UPCOMING INTERVIEWS CIRCULAR</h2>
+            <h2 class="page-header" id="rank_header">UPCOMING INTERVIEW CIRCULARS</h2>
         </div>
         <table id="" class="customTable">
             <tr style="background-color: darkblue; color: white">
                 <th style="width: 15%"> Topic </th>
                 <th style="width: 20%"> Date </th>
                 <th style="width: 15%"> Time </th>
-                <th style="width: 15%"> Email </th>
+                <th style="width: 15%"> Interviewer's Email </th>
+                <th style="width: 15%"> Status </th>
             </tr>
 
             {% for item in list %}
@@ -140,6 +141,19 @@
                     <td class="textMine"> {{ item["date"] }}</td>
                     <td class="textMine"> {{ item["time"] }}</td>
                     <td class="textMine"> {{ item["email"] }}</td>
+                    <td class="textMine">
+                    <form action="/apply_interview" method="post">
+{#                            <a href="/openIDE">#}
+{#                                #}
+{#                                Join Interview#}
+{#                            </a>#}
+                            <input type="text" id="email" name="email" value="{{ item["email"] }}" hidden>
+                            <input type="submit" value="Apply">
+
+                        </form>
+                    </td>
+
+
                 </tr>
             {% endfor %}
         </table>
