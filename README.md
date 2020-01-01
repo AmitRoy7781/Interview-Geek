@@ -19,9 +19,9 @@ A web application for the freshers to train and develop themselves by participat
 
 **Specifications :**
 - **Language of Back-End Development :** Python 3.6
-- **Web Framework :** Firebase 16.0.1
+- **Web Framework :** Flask 1.0.2
 - **Front-End :** HTML, CSS, Javascript
-- **Database :** MongoDB (mLab.com)
+- **Database :** Firebase 16.0.1
 - **Information Retrieval Tool :** Clist.by API
 - **Collaborative IDE & chat:** Pusher API
 - **Video call:**  WebRTC with socket I/O
