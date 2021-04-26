@@ -1,4 +1,4 @@
-# Interview Geek (http://interviewgeek.herokuapp.com)
+# [Interview Geek](http://interviewgeek.herokuapp.com)
 
 A web application for the freshers to train and develop themselves by participating in mock interview in this platform.
 
@@ -20,6 +20,7 @@ A web application for the freshers to train and develop themselves by participat
 - **Video call:**  WebRTC with socket I/O
 
 **Developed by:**
-- [Amit Roy](https://github.com/AmitRoy7)
+
+- [Amit Roy](https://github.com/AmitRoy7781)
 - [Abdullahil Baki Arif](https://github.com/ahbarif)
 - [MD. Rakibul Hasan](https://github.com/rht20)
