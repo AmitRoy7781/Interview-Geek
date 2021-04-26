@@ -21,6 +21,6 @@ A web application for the freshers to train and develop themselves by participat
 
 **Developed by:**
 
-- [Amit Roy](https://github.com/AmitRoy7781)
+- [Amit Roy](https://amitroy7781.github.io)
 - [Abdullahil Baki Arif](https://github.com/ahbarif)
 - [MD. Rakibul Hasan](https://github.com/rht20)
