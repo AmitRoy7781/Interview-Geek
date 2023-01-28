@@ -24,3 +24,5 @@ A web application for the freshers to train and develop themselves by participat
 - [Amit Roy](https://amitroy7781.github.io)
 - [Abdullahil Baki Arif](https://github.com/ahbarif)
 - [MD. Rakibul Hasan](https://github.com/rht20)
+
+Checkout the [presentation](https://drive.google.com/file/d/1QSET8GKgEOeHKYBEeNfOtvkNtWY6XcEf/view?usp=sharing) 
