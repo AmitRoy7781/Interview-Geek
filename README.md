@@ -1,6 +1,7 @@
 # Interview Geek
 
 A web application for the freshers to train and develop themselves by participating in mock interview in this platform.
+<img src="interview_geek.png" width="600">
 
 **Key Features:**
 - Realtime interview
