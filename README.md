@@ -1,4 +1,4 @@
-# [Interview Geek](http://interviewgeek.herokuapp.com)
+# Interview Geek
 
 A web application for the freshers to train and develop themselves by participating in mock interview in this platform.
 
